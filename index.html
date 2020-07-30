@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HDY blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="HDY blog">
+<meta property="og:description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="HDY">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="HDY blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -152,6 +154,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用github-pages，白嫖个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/30/%E4%BD%BF%E7%94%A8github-pages%EF%BC%8C%E7%99%BD%E5%AB%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用github pages，白嫖个人博客</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/30/%E4%BD%BF%E7%94%A8github-pages%EF%BC%8C%E7%99%BD%E5%AB%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-07-30T02:36:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结自网上的教程，使用hexo + github pages，快速搭建个人博客（windows操作系统）</p>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><h3 id="1-node-js"><a href="#1-node-js" class="headerlink" title="1.node.js"></a>1.node.js</h3><p>在<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">node.js</a>官网直接下载node.js安装包，无脑下一步安装。</p>
+<h3 id="2-cnpm工具-使用淘宝的镜像源"><a href="#2-cnpm工具-使用淘宝的镜像源" class="headerlink" title="2.cnpm工具(使用淘宝的镜像源)"></a>2.cnpm工具(使用淘宝的镜像源)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-hexo-blog框架"><a href="#3-hexo-blog框架" class="headerlink" title="3.hexo blog框架"></a>3.hexo blog框架</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用hexo搭建blog"><a href="#使用hexo搭建blog" class="headerlink" title="使用hexo搭建blog"></a>使用hexo搭建blog</h2><h3 id="1-新建一个文件夹，并git-bash该文件夹"><a href="#1-新建一个文件夹，并git-bash该文件夹" class="headerlink" title="1.新建一个文件夹，并git bash该文件夹"></a>1.新建一个文件夹，并git bash该文件夹</h3><h3 id="2-初始化文件夹"><a href="#2-初始化文件夹" class="headerlink" title="2.初始化文件夹"></a>2.初始化文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+
+<p>此时已经搭建好了博客，默认发布了一篇名为hello world的文章</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">&quot;xxx&quot;</span>  //新建名为xxx的文章</span><br><span class="line">$ hexo clean    //clean博客</span><br><span class="line">$ hexo g        //生成博客</span><br><span class="line">$ hexo s        //运行博客，可以通过localhost:4000/预览博客</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/30/%E4%BD%BF%E7%94%A8github-pages%EF%BC%8C%E7%99%BD%E5%AB%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -237,7 +314,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 John Doe
+    		&copy; 2020 HDY
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
