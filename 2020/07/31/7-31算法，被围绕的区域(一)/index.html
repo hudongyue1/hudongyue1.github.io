@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>7-31算法，被围绕的区域（一） | HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。 找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。">
+  <meta name="description" content="题目描述给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。 找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="7-31算法，被围绕的区域（一）">
 <meta property="og:url" content="http://yoursite.com/2020/07/31/7-31%E7%AE%97%E6%B3%95%EF%BC%8C%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F(%E4%B8%80)/index.html">
 <meta property="og:site_name" content="HDY blog">
-<meta property="og:description" content="给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。 找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。">
+<meta property="og:description" content="题目描述给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。 找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-31T10:13:44.000Z">
-<meta property="article:modified_time" content="2020-07-31T11:17:16.598Z">
+<meta property="article:modified_time" content="2020-08-01T05:41:04.629Z">
 <meta property="article:author" content="HDY">
+<meta property="article:tag" content="algorithm">
 <meta property="article:tag" content="Union Find">
 <meta name="twitter:card" content="summary">
   
@@ -63,6 +64,9 @@
 				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
+		</nav>
+		<nav>
+			<a>总文章数 5</a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -159,7 +163,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。</p>
 <p>找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。</p>
 <a id="more"></a>
 
@@ -214,6 +218,10 @@ X O X X</code></pre>
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
         		</li>
@@ -285,6 +293,15 @@ X O X X</code></pre>
   
 <nav id="article-nav">
   
+    <a href="/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          8-1算法，除法求值
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/07/31/7-31%E5%B9%B6%E6%9F%A5%E9%9B%86/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">7-31 并查集</div>
@@ -314,7 +331,7 @@ X O X X</code></pre>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">3.</span> <span class="toc-text">注意</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">4.</span> <span class="toc-text">注意</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -425,11 +442,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Union Find</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">data structure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
             
             <div class="clearfix"></div>

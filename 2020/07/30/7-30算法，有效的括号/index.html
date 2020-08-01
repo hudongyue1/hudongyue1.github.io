@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>算法：有效的括号 | HDY blog</title>
+  <title>7-30算法：有效的括号 | HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。 有效字符串需满足： 左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。">
+  <meta name="description" content="题目描述给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。 有效字符串需满足： 左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法：有效的括号">
+<meta property="og:title" content="7-30算法：有效的括号">
 <meta property="og:url" content="http://yoursite.com/2020/07/30/7-30%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/index.html">
 <meta property="og:site_name" content="HDY blog">
-<meta property="og:description" content="给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。 有效字符串需满足： 左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。">
+<meta property="og:description" content="题目描述给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。 有效字符串需满足： 左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-30T02:36:16.000Z">
-<meta property="article:modified_time" content="2020-07-31T01:07:32.816Z">
+<meta property="article:modified_time" content="2020-08-01T05:41:17.773Z">
 <meta property="article:author" content="HDY">
 <meta property="article:tag" content="stack">
+<meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="HDY blog" type="application/atom+xml">
@@ -63,6 +64,9 @@
 				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
+		</nav>
+		<nav>
+			<a>总文章数 5</a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -146,7 +150,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      算法：有效的括号
+      7-30算法：有效的括号
     </h1>
   
 
@@ -159,7 +163,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。</p>
 <p>有效字符串需满足：</p>
 <p>左括号必须用相同类型的右括号闭合。<br>左括号必须以正确的顺序闭合。<br>注意空字符串可被认为是有效字符串。</p>
 <a id="more"></a>
@@ -221,6 +225,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
         		</li>
       		
 		</ul>
@@ -328,7 +336,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">1.</span> <span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-number">2.</span> <span class="toc-text">示例 2:</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">1.1.</span> <span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-number">1.2.</span> <span class="toc-text">示例 2:</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -439,11 +447,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Union Find</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">data structure</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
             
             <div class="clearfix"></div>
