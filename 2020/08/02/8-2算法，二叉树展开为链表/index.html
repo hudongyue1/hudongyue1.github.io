@@ -6,23 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>8-1算法，除法求值 | HDY blog</title>
+  <title>8-2算法，二叉树展开为链表 | HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述给出方程式 A &#x2F; B &#x3D; k, 其中 A 和 B 均为用字符串表示的变量， k 是一个浮点型数字。根据已知方程式求解问题，并返回计算结果。如果结果不存在，则返回 -1.0。 示例 :给定： a &#x2F; b &#x3D; 2.0, b &#x2F; c &#x3D; 3.0问题： a &#x2F; c &#x3D; ?, b &#x2F; a &#x3D; ?, a &#x2F; e &#x3D; ?, a &#x2F; a &#x3D; ?, x &#x2F; x &#x3D; ? 返回： [6.0, 0.5, -1.">
+  <meta name="description" content="题目描述给定一个二叉树，原地将它展开为一个单链表。 树节点的定义为：  Definition for a binary tree node.  struct TreeNode &amp;#123;      int val;      TreeNode *left;      TreeNode *right;      TreeNode() : val(0), left(nullptr), right(n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8-1算法，除法求值">
-<meta property="og:url" content="http://yoursite.com/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/index.html">
+<meta property="og:title" content="8-2算法，二叉树展开为链表">
+<meta property="og:url" content="http://yoursite.com/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="HDY blog">
-<meta property="og:description" content="题目描述给出方程式 A &#x2F; B &#x3D; k, 其中 A 和 B 均为用字符串表示的变量， k 是一个浮点型数字。根据已知方程式求解问题，并返回计算结果。如果结果不存在，则返回 -1.0。 示例 :给定： a &#x2F; b &#x3D; 2.0, b &#x2F; c &#x3D; 3.0问题： a &#x2F; c &#x3D; ?, b &#x2F; a &#x3D; ?, a &#x2F; e &#x3D; ?, a &#x2F; a &#x3D; ?, x &#x2F; x &#x3D; ? 返回： [6.0, 0.5, -1.">
+<meta property="og:description" content="题目描述给定一个二叉树，原地将它展开为一个单链表。 树节点的定义为：  Definition for a binary tree node.  struct TreeNode &amp;#123;      int val;      TreeNode *left;      TreeNode *right;      TreeNode() : val(0), left(nullptr), right(n">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/assets/img/blog4/1.png">
-<meta property="article:published_time" content="2020-08-01T05:32:58.000Z">
-<meta property="article:modified_time" content="2020-08-01T06:52:21.236Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/blog5/1.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/blog5/2.png">
+<meta property="article:published_time" content="2020-08-02T01:29:56.000Z">
+<meta property="article:modified_time" content="2020-08-02T03:56:22.141Z">
 <meta property="article:author" content="HDY">
 <meta property="article:tag" content="algorithm">
-<meta property="article:tag" content="Union Find">
+<meta property="article:tag" content="DFS，stack">
+<meta property="article:tag" content="binary tree">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/blog4/1.png">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/blog5/1.png">
   
     <link rel="alternative" href="/atom.xml" title="HDY blog" type="application/atom+xml">
   
@@ -164,7 +166,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-8-1算法，除法求值" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-8-2算法，二叉树展开为链表" class="article article-type-post " itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
@@ -175,7 +177,7 @@
 	<center><p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      8-1算法，除法求值
+      8-2算法，二叉树展开为链表
     </h1>
   
 </p></center>
@@ -186,8 +188,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/" class="archive-article-date">
-  	<time datetime="2020-08-01T05:32:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
+<a href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2020-08-02T01:29:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-02</time>
 </a>
         
       </header>
@@ -195,30 +197,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给出方程式 A / B = k, 其中 A 和 B 均为用字符串表示的变量， k 是一个浮点型数字。根据已知方程式求解问题，并返回计算结果。如果结果不存在，则返回 -1.0。</p>
-<p>示例 :<br>给定： <code>a / b = 2.0, b / c = 3.0</code><br>问题： <code>a / c = ?, b / a = ?, a / e = ?, a / a = ?, x / x = ? </code><br>返回： <code>[6.0, 0.5, -1.0, 1.0, -1.0 ]</code></p>
-<a id="more"></a>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个二叉树，原地将它展开为一个单链表。</p>
+<p>树节点的定义为：</p>
+<pre><code> Definition for a binary tree node.
+ struct TreeNode &#123;
+     int val;
+     TreeNode *left;
+     TreeNode *right;
+     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;
+     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;
+     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;
+ &#125;;</code></pre>
+<p>例如，给定二叉树</p>
+<pre><code>    1
+   / \
+  2   5
+ / \   \
+3   4   6</code></pre>
+<p>将其展开为：</p>
+<pre><code>1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+         \
+          6</code></pre>
+<h2 id="方法一：前序遍历"><a href="#方法一：前序遍历" class="headerlink" title="方法一：前序遍历"></a>方法一：前序遍历</h2><p>按照前序遍历，依次将访问到的节点存入一个队列中，然后，将队列按序连起来，即得到展开后的链表。</p>
+<p>前序遍历实现有两种方法，一种递归实现，一种非递归实现：</p>
+<h3 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;TreeNode*&gt; <span class="built_in">list</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        DFS(root, <span class="built_in">list</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;<span class="built_in">list</span>.size(); i++)&#123;</span><br><span class="line">            TreeNode *pre = <span class="built_in">list</span>[i<span class="number">-1</span>], *cur = <span class="built_in">list</span>[i];</span><br><span class="line">            pre-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">            pre-&gt;right = cur;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(TreeNode *root, <span class="built_in">vector</span>&lt;TreeNode*&gt; <span class="built_in">list</span>)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="built_in">list</span>.push_back(root);</span><br><span class="line">            DFS(root-&gt;left, <span class="built_in">list</span>);</span><br><span class="line">            DFS(root-&gt;right, <span class="built_in">list</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>输入为：<code>vector&lt;pair&lt;string, string&gt;&gt; equations, vector&lt;double&gt;&amp; values, vector&lt;pair&lt;string, string&gt;&gt; queries</code>(方程式，方程式结果，问题方程式)， 其中 equations.size() == values.size()，即方程式的长度与方程式结果长度相等（程式与结果一一对应），并且结果值均为正数。以上为方程式的描述。 返回vector<double>类型。</p>
-<p>基于上述例子，输入如下：</p>
-<pre><code>equations(方程式) = [ [&quot;a&quot;, &quot;b&quot;], [&quot;b&quot;, &quot;c&quot;] ],
-values(方程式结果) = [2.0, 3.0],
-queries(问题方程式) = [ [&quot;a&quot;, &quot;c&quot;], [&quot;b&quot;, &quot;a&quot;], [&quot;a&quot;, &quot;e&quot;], [&quot;a&quot;, &quot;a&quot;], [&quot;x&quot;, &quot;x&quot;] ].</code></pre>
-<p>输入总是有效的。你可以假设除法运算中不会出现除数为0的情况，且不存在任何矛盾的结果。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
-<li>首先，遍历equations，找到尚未出现过的新字母，然后将字母压入para这个vector中，这样通过para.size()就能够知道有多少个不同字母了。</li>
-<li>然后，初始化一个长度为para.size()的并查集对象，这个并查集对象的容器pre，装有一对数据pair&lt;int, double&gt;，分别表示父节点的index、与父节点之间的倍数关系(初始时，父节点为自己，倍数为1.0)。再次遍历equations，将每组数据的两个字母在para里面的索引找出来，同时对应有一个values的值作为倍数，这样就能使用并查集的join方法，将两个字母的倍数关系进行关联。</li>
-<li>最后，完成了所有equations里面的字母间的关联，就可以遍历queries了，如果出现了para里面没有的字母，或者没有在同一个集合里面的两个字母，那么返回-1.0；如果出现了同一集合里面的两个字母，就可以查找到这两个字母的共同的根节点，以及他俩和这个根节点之间的倍数关系，然后就能算出这两个字母之间的倍数关系。</li>
-</ol>
-<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><ol>
-<li><p>和一般的并查集不同，这道题涉及到路径权重，即集合间的节点之间存在倍数关系，所以可以使用pair，来实现数值对的存放。</p>
-</li>
-<li><p>在将两个节点进行关联的时候，首先要分别找到他们各自的根节点，以及他们各自与根节点的倍数关系，然后在关联这两个节点的根节点得时侯，需要计算才能得到正确的倍数关系。</p>
-<p> 比如，下面这种情况时，我们关联C、F节点，已知C、F节点之间的倍数关系为m，那么就能够算出根节点A、E之间的倍数关系，然后将A、E进行关联。</p>
-<p> <img src="/assets/img/blog4/1.png" alt="imgs"></p>
-</li>
-</ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Union</span>&#123;</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">double</span>&gt;&gt;  pre;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Union(<span class="keyword">int</span> n)&#123;</span><br><span class="line">        pre.resize(n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">            pre[i] = <span class="built_in">make_pair</span>(i, <span class="number">1.0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> son, temp;</span><br><span class="line">        son = root;</span><br><span class="line">        <span class="keyword">while</span>(root != pre[root].first)</span><br><span class="line">            root = pre[root].first;</span><br><span class="line">        <span class="comment">//路径压缩，在数据不多的时候，可以不用</span></span><br><span class="line">        <span class="comment">// while(son != root)&#123;</span></span><br><span class="line">        <span class="comment">//     temp = pre[son].first;</span></span><br><span class="line">        <span class="comment">//     while(temp != root)&#123;</span></span><br><span class="line">        <span class="comment">//         pre[son].second *= pre[temp].second;</span></span><br><span class="line">        <span class="comment">//         temp = pre[temp].first;</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">//     pre[son].first = root;</span></span><br><span class="line">        <span class="comment">//     son = temp;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">join</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">double</span> multiple)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> root1 = search(x);</span><br><span class="line">        <span class="keyword">int</span> root2 = search(y);</span><br><span class="line">        <span class="keyword">if</span>(root1 != root2)&#123;</span><br><span class="line">            <span class="keyword">double</span> f1 = <span class="number">1.0</span>, f2 = <span class="number">1.0</span>;</span><br><span class="line">            <span class="keyword">while</span>(x != root1)&#123;</span><br><span class="line">                f1 *= pre[x].second;</span><br><span class="line">                x = pre[x].first;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(y != root2)&#123;</span><br><span class="line">                f2 *= pre[y].second;</span><br><span class="line">                y = pre[y].first;</span><br><span class="line">            &#125;</span><br><span class="line">            pre[root2].first = root1;</span><br><span class="line">            pre[root2].second = (f1 / f2)*multiple;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">multi</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">-1</span> || y == <span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1.0</span>;</span><br><span class="line">        <span class="keyword">int</span> root1 = search(x);</span><br><span class="line">        <span class="keyword">int</span> root2 = search(y);</span><br><span class="line">        <span class="keyword">if</span>(root1 == root2)&#123;</span><br><span class="line">            <span class="keyword">double</span> f1 = <span class="number">1.0</span>, f2 = <span class="number">1.0</span>;</span><br><span class="line">            <span class="keyword">while</span>(x != root1)&#123;</span><br><span class="line">                f1 *= pre[x].second;</span><br><span class="line">                x = pre[x].first;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(y != root2)&#123;</span><br><span class="line">                f2 *= pre[y].second;</span><br><span class="line">                y = pre[y].first;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> f2/f1;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> length;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; para;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; answer;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; <span class="title">calcEquation</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt;&amp; equations, <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;&amp; values, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt;&amp; queries)</span></span>&#123;</span><br><span class="line">        answer.resize(queries.size());</span><br><span class="line">        <span class="keyword">if</span>(equations.size() == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;queries.size(); i++)</span><br><span class="line">                answer[i] = <span class="number">-1.0</span>;</span><br><span class="line">            <span class="keyword">return</span> answer;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;equations.size(); i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">2</span>; j++)</span><br><span class="line">                <span class="keyword">if</span>(find(para.begin(), para.end(), equations[i][j]) == para.end())</span><br><span class="line">                    para.push_back(equations[i][j]);</span><br><span class="line"></span><br><span class="line">        length = para.size();</span><br><span class="line">        Union <span class="built_in">set</span> = Union(length);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;equations.size(); i++)</span><br><span class="line">            <span class="built_in">set</span>.join(index(equations[i][<span class="number">0</span>]), index(equations[i][<span class="number">1</span>]), values[i]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;queries.size(); i++)</span><br><span class="line">            answer[i] = <span class="built_in">set</span>.multi(index(queries[i][<span class="number">0</span>]), index(queries[i][<span class="number">1</span>]));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">index</span><span class="params">(<span class="built_in">string</span> c)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;para.size(); i++)</span><br><span class="line">            <span class="keyword">if</span>(para[i] == c)</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="非递归实现"><a href="#非递归实现" class="headerlink" title="非递归实现"></a>非递归实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> <span class="built_in">list</span> = <span class="built_in">vector</span>&lt;TreeNode*&gt;();</span><br><span class="line">        <span class="keyword">auto</span> stk = <span class="built_in">stack</span>&lt;TreeNode*&gt;();</span><br><span class="line">        TreeNode *node = root;</span><br><span class="line">        <span class="keyword">while</span>(node != <span class="literal">nullptr</span> || !stk.empty())&#123;</span><br><span class="line">            <span class="keyword">while</span>(node != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                <span class="built_in">list</span>.push_back(node);</span><br><span class="line">                stk.push(node);</span><br><span class="line">                node = node-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            node = stk.top();</span><br><span class="line">            stk.pop();</span><br><span class="line">            node = node-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;<span class="built_in">list</span>.size(); i++)&#123;</span><br><span class="line">            TreeNode *pre = <span class="built_in">list</span>[i<span class="number">-1</span>], *cur = <span class="built_in">list</span>[i];</span><br><span class="line">            pre-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">            pre-&gt;right = cur;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法二：前序遍历和展开同时进行"><a href="#方法二：前序遍历和展开同时进行" class="headerlink" title="方法二：前序遍历和展开同时进行"></a>方法二：前序遍历和展开同时进行</h2><p>将二叉树的左右子树看作一个整体，暂时忽略其内部结构，在访问了根节点后，我们要先遍历左子树，再遍历右子树，所以，如果先将右子树压入栈中，再将左子树压入栈中，那么退栈时，一定会先返回左子树（即先遍历左子树）。我们只需要将各个子树的根压入栈中即可。最后再使用递归思想，对每个子树也执行这样的操作。</p>
+<p><img src="/assets/img/blog5/1.png" alt="picture"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode *root)</span> </span>&#123;</span><br><span class="line">        TreeNode *pre = <span class="literal">nullptr</span>, *cur;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; stk;</span><br><span class="line">        stk.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!stk.empty())&#123;</span><br><span class="line">            cur = stk.top();</span><br><span class="line">            stk.pop();</span><br><span class="line">            <span class="keyword">if</span>(pre != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                pre-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">                pre-&gt;right = cur;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur-&gt;right != <span class="literal">nullptr</span>)</span><br><span class="line">                stk.push(cur-&gt;right);</span><br><span class="line">            <span class="keyword">if</span>(cur-&gt;left != <span class="literal">nullptr</span>)</span><br><span class="line">                stk.push(cur-&gt;left);</span><br><span class="line">            pre = cur;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法三：寻找前驱节点"><a href="#方法三：寻找前驱节点" class="headerlink" title="方法三：寻找前驱节点"></a>方法三：寻找前驱节点</h2><p>由于先序遍历的特性，我们总是先访问根，然后左子树，最后右子树，这就意味着，即是是右子树中最先被访问的（即右子树的根），也比左子树中最后被访问的还要后被访问。所以，我们可以直接将左子树中最右的子树当作右子树的前驱节点，即让左子树最右的节点的右指针指向右子树的根节点，然后让整体的根节点的右指针，指向左子树的根节点。然后按照此方法，依次访问后面的节点即可。</p>
+<p><img src="/assets/img/blog5/2.png" alt="picture"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode *root)</span></span>&#123;</span><br><span class="line">        TreeNode *cur = root;</span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cur-&gt;left != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                TreeNode *pre = cur-&gt;left;</span><br><span class="line">                <span class="keyword">while</span>(pre-&gt;right != <span class="literal">nullptr</span>)</span><br><span class="line">                    pre = pre-&gt;right;</span><br><span class="line">                pre-&gt;right = cur-&gt;right;</span><br><span class="line">                cur-&gt;right = cur-&gt;left;</span><br><span class="line">                cur-&gt;left = <span class="literal">nullptr</span>;<span class="comment">//注意将左子树清空</span></span><br><span class="line">            &#125;</span><br><span class="line">            cur = cur-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -233,7 +253,7 @@ queries(问题方程式) = [ [&quot;a&quot;, &quot;c&quot;], [&quot;b&quot;, &qu
 				
 				<br>
 				<strong>本文链接：</strong>
-				http://yoursite.com/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/
+				http://yoursite.com/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/
 				<br>
 			</blockquote>
 			
@@ -278,7 +298,11 @@ queries(问题方程式) = [ [&quot;a&quot;, &quot;c&quot;], [&quot;b&quot;, &qu
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">DFS，stack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">binary tree</a>
         		</li>
       		
 		</ul>
@@ -334,7 +358,7 @@ queries(问题方程式) = [ [&quot;a&quot;, &quot;c&quot;], [&quot;b&quot;, &qu
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -348,18 +372,9 @@ queries(问题方程式) = [ [&quot;a&quot;, &quot;c&quot;], [&quot;b&quot;, &qu
   
 <nav id="article-nav">
   
-    <a href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          8-2算法，二叉树展开为链表
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/31/7-31%E7%AE%97%E6%B3%95%EF%BC%8C%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F(%E4%B8%80)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">7-31算法，被围绕的区域（一）</div>
+    <a href="/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">8-1算法，除法求值</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -386,7 +401,7 @@ queries(问题方程式) = [ [&quot;a&quot;, &quot;c&quot;], [&quot;b&quot;, &qu
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">难点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="toc-number">2.</span> <span class="toc-text">方法一：前序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.1.</span> <span class="toc-text">递归实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.2.</span> <span class="toc-text">非递归实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%E5%92%8C%E5%B1%95%E5%BC%80%E5%90%8C%E6%97%B6%E8%BF%9B%E8%A1%8C"><span class="toc-number">3.</span> <span class="toc-text">方法二：前序遍历和展开同时进行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9A%E5%AF%BB%E6%89%BE%E5%89%8D%E9%A9%B1%E8%8A%82%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">方法三：寻找前驱节点</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -396,7 +411,7 @@ queries(问题方程式) = [ [&quot;a&quot;, &quot;c&quot;], [&quot;b&quot;, &qu
 </aside>
 
 <div align="center" class="post-count">
-	字数：1.2k字 | 预计阅读时长：5分钟
+	字数：796字 | 预计阅读时长：3分钟
 </div>
 
   
