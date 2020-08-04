@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: DFS，stack | HDY blog</title>
+  <title>8-4算法，课程表 | HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HDY blog">
-<meta property="og:url" content="http://yoursite.com/tags/DFS%EF%BC%8Cstack/index.html">
+  <meta name="description" content="题目描述你这个学期必须选修numCourse门课程，记为 0 到 numCourse-1 。 在选修某些课程之前需要一些先修课程。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示他们：[0,1] 给定课程总量以及它们的先决条件，请你判断是否可能完成所有课程的学习？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8-4算法，课程表">
+<meta property="og:url" content="http://yoursite.com/2020/08/04/8-4%E7%AE%97%E6%B3%95%EF%BC%8C%E8%AF%BE%E7%A8%8B%E8%A1%A8/index.html">
 <meta property="og:site_name" content="HDY blog">
-<meta property="og:description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
+<meta property="og:description" content="题目描述你这个学期必须选修numCourse门课程，记为 0 到 numCourse-1 。 在选修某些课程之前需要一些先修课程。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示他们：[0,1] 给定课程总量以及它们的先决条件，请你判断是否可能完成所有课程的学习？">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/assets/img/blog6/1.png">
+<meta property="article:published_time" content="2020-08-04T08:39:09.000Z">
+<meta property="article:modified_time" content="2020-08-04T09:20:11.427Z">
 <meta property="article:author" content="HDY">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="BFS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/blog6/1.png">
   
     <link rel="alternative" href="/atom.xml" title="HDY blog" type="application/atom+xml">
   
@@ -158,37 +164,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-8-4算法，课程表" class="article article-type-post " itemscope itemprop="blogPost">
   
-  
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-08-02T01:29:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
+	
+	<center><p>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/">8-2算法，二叉树展开为链表</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      8-4算法，课程表
     </h1>
   
+</p></center>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-        <div class="article-info info-on-right">
-          
+<a href="/2020/08/04/8-4%E7%AE%97%E6%B3%95%EF%BC%8C%E8%AF%BE%E7%A8%8B%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2020-08-04T08:39:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
+</a>
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你这个学期必须选修<code>numCourse</code>门课程，记为<code> 0 </code>到<code> numCourse-1 </code>。</p>
+<p>在选修某些课程之前需要一些先修课程。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示他们：<code>[0,1]</code></p>
+<p>给定课程总量以及它们的先决条件，请你判断是否可能完成所有课程的学习？</p>
+<a id="more"></a>
+
+<p>示例 1:</p>
+<pre><code>输入: 2, [[1,0]]
+输出: true
+解释: 总共有 2 门课程。学习课程 1 之前，你需要完成课程 0。所以这是可能的。</code></pre>
+<p>示例 2:</p>
+<pre><code>输入: 2, [[1,0],[0,1]]
+输出: false
+解释: 总共有 2 门课程。学习课程 1 之前，你需要先完成课程 0；并且学习课程 0 之前，你还应先完    成课程 1。这是不可能的。</code></pre>
+<p>提示：</p>
+<blockquote>
+<ol>
+<li>输入的先决条件是由 边缘列表 表示的图形，而不是 邻接矩阵 。详情请参见图的表示法。</li>
+<li>你可以假定输入的先决条件中没有重复的边。</li>
+<li>1 &lt;= numCourses &lt;= 10^5</li>
+</ol>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题实际上就是判断有向图是否存在圈（从一个节点开始，能够回到这个节点），那么在所有课程中，入度为0的课程，一定是其他课程的先修课程或者为单独的课程（既无先修课程，也无课程需要先修此课程），那么我们可以先去掉这些课程，然后将与这些课程相关联的课程的入度减一，然后再重复这个操作。如果到最后，去掉的课程数不等于所有的课程数，说明这些课程出现了圈，那么就不可能完成所有课程的学习。可以采用宽度优先搜索，遍历这些课程。</p>
+<p><img src="/assets/img/blog6/1.png" alt="description"></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canFinish</span>(<span class="params"><span class="keyword">int</span> numCourses, vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; prerequisites</span>)</span> &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; preList(numCourses);<span class="comment">//存储能从该节点直接到达的节点</span></span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">inDegree</span>(<span class="params">numCourses, <span class="number">0</span></span>)</span>;<span class="comment">//存储该节点的入度，初始为0</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;prerequisites.size(); ++i)&#123;</span><br><span class="line">            <span class="keyword">int</span> pre = prerequisites[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> next = prerequisites[i][<span class="number">1</span>];</span><br><span class="line">            preList[pre].push_back(next);</span><br><span class="line">            ++inDegree[next];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//记录访问过的节点（删去的）</span></span><br><span class="line">        queue&lt;<span class="keyword">int</span>&gt; traverse;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;numCourses; ++i)&#123;<span class="comment">//找到最初所有入度为0的节点</span></span><br><span class="line">            <span class="keyword">if</span>(inDegree[i] == <span class="number">0</span>)</span><br><span class="line">                traverse.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!traverse.empty())&#123;</span><br><span class="line">            <span class="keyword">int</span> cur = traverse.front(); traverse.pop();</span><br><span class="line">            ++count;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;preList[cur].size(); ++i)&#123;</span><br><span class="line">                <span class="keyword">if</span>(--inDegree[preList[cur][i]] == <span class="number">0</span>)<span class="comment">//减去一个入度以后，入度为0</span></span><br><span class="line">                    traverse.push(preList[cur][i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count == numCourses;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      
+	
+		
+		
+		  <div>
+			<blockquote>
+				<strong>本文作者：</strong>
+				
+				  HDY
+				
+				<br>
+		
+			</blockquote>
+			
+			
+			<hr>
+				<center><strong></strong></center>
+			<hr>
+		  </div>
+		
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>奥力给<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,29 +279,127 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">DFS，stack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">binary tree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/04/8-4%E7%AE%97%E6%B3%95%EF%BC%8C%E8%AF%BE%E7%A8%8B%E8%A1%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">8-2算法，二叉树展开为链表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+<div align="center" class="post-count">
+	字数：651字 | 预计阅读时长：2分钟
+</div>
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -257,9 +436,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
