@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | HDY blog</title>
+  <title>8-7 哈希表(散列表) | HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HDY blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="简介哈希表是一种使用哈希函数组织数据的数据结构，它支持快速插入和搜索。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8-7 哈希表(散列表)">
+<meta property="og:url" content="http://yoursite.com/2020/08/07/8-7%20%E5%93%88%E5%B8%8C%E8%A1%A8-%E6%95%A3%E5%88%97%E8%A1%A8/index.html">
 <meta property="og:site_name" content="HDY blog">
-<meta property="og:description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
+<meta property="og:description" content="简介哈希表是一种使用哈希函数组织数据的数据结构，它支持快速插入和搜索。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/assets/img/blog10/1.png">
+<meta property="article:published_time" content="2020-08-07T02:27:42.000Z">
+<meta property="article:modified_time" content="2020-08-07T09:00:28.460Z">
 <meta property="article:author" content="HDY">
+<meta property="article:tag" content="data structure">
+<meta property="article:tag" content="hash">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/blog10/1.png">
   
     <link rel="alternative" href="/atom.xml" title="HDY blog" type="application/atom+xml">
   
@@ -158,80 +164,127 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-8-7 哈希表-散列表" class="article article-type-post " itemscope itemprop="blogPost">
   
-  
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/07/8-7%E7%AE%97%E6%B3%95%EF%BC%8C%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88%E3%80%81%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84%E7%9A%84%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-08-07T09:35:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
+	
+	<center><p>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/07/8-7%E7%AE%97%E6%B3%95%EF%BC%8C%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88%E3%80%81%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84%E7%9A%84%E5%BA%94%E7%94%A8/">8-7算法，哈希集合、哈希映射的应用</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      8-7 哈希表(散列表)
     </h1>
   
+</p></center>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hash</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
 <a href="/2020/08/07/8-7%20%E5%93%88%E5%B8%8C%E8%A1%A8-%E6%95%A3%E5%88%97%E8%A1%A8/" class="archive-article-date">
   	<time datetime="2020-08-07T02:27:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/07/8-7%20%E5%93%88%E5%B8%8C%E8%A1%A8-%E6%95%A3%E5%88%97%E8%A1%A8/">8-7 哈希表(散列表)</a>
-    </h1>
-  
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>哈希表是一种使用<strong>哈希函数</strong>组织数据的数据结构，它支持<strong>快速插入和搜索</strong>。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>哈希表（又称散列表）的原理为：借助 哈希函数，将键映射到存储桶地址。更确切地说，</p>
+<ul>
+<li><p>首先开辟一定长度的，具有连续物理地址的桶数组；</p>
+</li>
+<li><p>当我们插入一个新的键时，哈希函数将决定该键应该分配到哪个桶中，并将该键存储在相应的桶中；</p>
+</li>
+<li><p>当我们想要搜索一个键时，哈希表将使用哈希函数来找到对应的桶，并在该桶中进行搜索。</p>
+</li>
+</ul>
+<p>作者：力扣 (LeetCode)<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/hash-table-plus/kd67i/">https://leetcode-cn.com/leetbook/read/hash-table-plus/kd67i/</a></p>
+<p><img src="/assets/img/blog10/1.png" alt="image"></p>
+<blockquote>
+<p>可以联想到cache的工作原理。</p>
+</blockquote>
+<h2 id="负载因子"><a href="#负载因子" class="headerlink" title="负载因子"></a>负载因子</h2><p><strong>实际利用桶的个数</strong>与<strong>桶的总数</strong> 的比值，称为负载因子，反映了哈希表的装满程度。负载因子太低了，会使得大量存储空间被浪费，负载因子太高了，出现哈希冲突的概率就会难以接受。比较合理的负载因子是 0.7，如果数据量是 7，则会创建 10 个桶，以此类推。随着插入的数据量的增加，计算机会逐渐增加桶的个数，并选择合适的哈希函数，使得数据经过映射之后能均匀地分布在桶中。</p>
+<h2 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h2><p>不同的key被哈希函数映射到了同一个桶中，这时就出现了哈希冲突。为处理哈希冲突，常用以下几种方法。</p>
+<h3 id="线性试探法"><a href="#线性试探法" class="headerlink" title="线性试探法"></a>线性试探法</h3><ul>
+<li><p>插入<br>如果通过哈希函数映射到某个桶，发现这个桶已经被占用了，那么就可以按地址往后寻找，直到找到一个空的桶(如果找到了哈希表最后一个地址，就从表头继续)。</p>
+</li>
+<li><p>查询<br>将查询的key带入哈希函数，得到对应的映射，比对这个映射处桶的key是否为要查询的，如果不是，那么往后面查找，直到找到能对上的为止。</p>
+</li>
+<li><p>删除<br>将对应位置标记位delete</p>
+</li>
+</ul>
+<h3 id="链地址法"><a href="#链地址法" class="headerlink" title="链地址法"></a>链地址法</h3><p>顾名思义，发生哈希冲突时，将同一个桶里的元素串成一个链表，哈希表内只存储链表表头(第一个入表的元素)以及下一个元素的指针。</p>
+<h3 id="再哈希法"><a href="#再哈希法" class="headerlink" title="再哈希法"></a>再哈希法</h3><p>比如双重哈希法，当发生冲哈希突时，使用另一个哈希函数来避免冲突。</p>
+<h3 id="公共溢出区法"><a href="#公共溢出区法" class="headerlink" title="公共溢出区法"></a>公共溢出区法</h3><p>建立一个公共区域，将因发生哈希冲突而无法入表的元素，都放在这个公共区域。</p>
+<h2 id="哈希集合的简单实现"><a href="#哈希集合的简单实现" class="headerlink" title="哈希集合的简单实现"></a>哈希集合的简单实现</h2><p>简单实现哈希集合的功能，需要实现的功能有</p>
+<blockquote>
+<p>add(int key)，将key加入哈希集合中；<br>remove(int key)，将key从哈希集合中移除；<br>contains(int key)，key是否在哈希集合中。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHashSet</span> &#123;</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; hash;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myHashFun</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> key%<span class="number">10000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getPos</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;hash[index].size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash[index][i] == key) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;<span class="comment">//当key不在hash表中时，返回-1。</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    MyHashSet() &#123;</span><br><span class="line">        hash.resize(<span class="number">10000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = myHashFun(key);</span><br><span class="line">        <span class="keyword">if</span>(getPos(key, index) &lt; <span class="number">0</span>)</span><br><span class="line">            hash[index].push_back(key);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = myHashFun(key);</span><br><span class="line">        <span class="keyword">int</span> pos = getPos(key, index);</span><br><span class="line">        <span class="keyword">if</span> (pos &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            hash[index].erase(hash[index].begin() + pos);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">contains</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = myHashFun(key);</span><br><span class="line">        <span class="keyword">if</span>(getPos(key, index) &gt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="哈希映射的简单实现"><a href="#哈希映射的简单实现" class="headerlink" title="哈希映射的简单实现"></a>哈希映射的简单实现</h2><p>简单实现哈希映射的功能，需要实现的功能有</p>
+<blockquote>
+<p>put(int key, int value)，将key:value加入哈希表中；<br>remove(int key)，将key从哈希表中移除；<br>get(int key)，返回key对应的value。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHashMap</span> &#123;</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;&gt; hash;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myHashFun</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> key%<span class="number">10000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getPos</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;hash[index].size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash[index][i].first == key)</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    MyHashMap() &#123;</span><br><span class="line">        hash.resize(<span class="number">10001</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = myHashFun(key);</span><br><span class="line">        <span class="keyword">int</span> pos = getPos(key, index);</span><br><span class="line">        <span class="keyword">if</span>(pos &lt; <span class="number">0</span>)</span><br><span class="line">            hash[index].push_back(&#123;key, value&#125;);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            hash[index][pos] = &#123;key, value&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = myHashFun(key);</span><br><span class="line">        <span class="keyword">int</span> pos = getPos(key, index);</span><br><span class="line">        <span class="keyword">if</span>(pos &gt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> hash[index][pos].second;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> index = myHashFun(key);</span><br><span class="line">       <span class="keyword">int</span> pos = getPos(key, index);</span><br><span class="line">       <span class="keyword">if</span>(pos &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">           hash[index].erase(hash[index].begin()+pos);</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>因为是使用的数组来存储，所以在删除元素的时候，可以将当前要删除的元素和数组中最后一个交换，再删去最后一个元素，这样能够提升速度</p>
+
+      
+	
+		
+		
+		  <div>
+			<blockquote>
+				<strong>本文作者：</strong>
+				
+				  HDY
+				
+				<br>
+		
+			</blockquote>
+			
+			
+			<hr>
+				<center><strong></strong></center>
+			<hr>
+		  </div>
+		
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>奥力给<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -247,382 +300,129 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/07/8-7%20%E5%93%88%E5%B8%8C%E8%A1%A8-%E6%95%A3%E5%88%97%E8%A1%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/05/8-5%E7%AE%97%E6%B3%95%EF%BC%8C%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D/" class="archive-article-date">
-  	<time datetime="2020-08-05T11:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/08/07/8-7%E7%AE%97%E6%B3%95%EF%BC%8C%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88%E3%80%81%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84%E7%9A%84%E5%BA%94%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          8-7算法，哈希集合、哈希映射的应用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/05/8-5%E7%AE%97%E6%B3%95%EF%BC%8C%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">8-5算法，打家劫舍</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/05/8-5%E7%AE%97%E6%B3%95%EF%BC%8C%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D/">8-5算法，打家劫舍</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">recursion</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9B%A0%E5%AD%90"><span class="toc-number">3.</span> <span class="toc-text">负载因子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81"><span class="toc-number">4.</span> <span class="toc-text">哈希冲突</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%AF%95%E6%8E%A2%E6%B3%95"><span class="toc-number">4.1.</span> <span class="toc-text">线性试探法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E5%9C%B0%E5%9D%80%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">链地址法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%8D%E5%93%88%E5%B8%8C%E6%B3%95"><span class="toc-number">4.3.</span> <span class="toc-text">再哈希法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%85%B1%E6%BA%A2%E5%87%BA%E5%8C%BA%E6%B3%95"><span class="toc-number">4.4.</span> <span class="toc-text">公共溢出区法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0"><span class="toc-number">5.</span> <span class="toc-text">哈希集合的简单实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.</span> <span class="toc-text">哈希映射的简单实现</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+<div align="center" class="post-count">
+	字数：1.2k字 
+</div>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/04/8-4%EF%BC%8C%E5%88%A4%E6%96%AD%E6%9C%89%E5%90%91%E5%9B%BE%E6%98%AF%E5%90%A6%E6%9C%89%E5%9C%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-04T11:10:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/04/8-4%EF%BC%8C%E5%88%A4%E6%96%AD%E6%9C%89%E5%90%91%E5%9B%BE%E6%98%AF%E5%90%A6%E6%9C%89%E5%9C%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">8-4，判断有向图是否有圈的两种常用方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">graph</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/04/8-4%E7%AE%97%E6%B3%95%EF%BC%8C%E8%AF%BE%E7%A8%8B%E8%A1%A8(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-08-04T08:39:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/04/8-4%E7%AE%97%E6%B3%95%EF%BC%8C%E8%AF%BE%E7%A8%8B%E8%A1%A8(%E4%B8%80)/">8-4算法，课程表(一)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-08-02T01:29:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/">8-2算法，二叉树展开为链表</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">binary tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/" class="archive-article-date">
-  	<time datetime="2020-08-01T05:32:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/">8-1算法，除法求值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-w">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/31/7-31%E7%AE%97%E6%B3%95%EF%BC%8C%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-07-31T10:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/31/7-31%E7%AE%97%E6%B3%95%EF%BC%8C%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F(%E4%B8%80)/">7-31算法，被围绕的区域（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/31/7-31%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="archive-article-date">
-  	<time datetime="2020-07-31T06:35:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/31/7-31%E5%B9%B6%E6%9F%A5%E9%9B%86/">7-31 并查集</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">data structure</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/30/7-30%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="archive-article-date">
-  	<time datetime="2020-07-30T02:36:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/30/7-30%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">7-30算法：有效的括号</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -660,8 +460,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
