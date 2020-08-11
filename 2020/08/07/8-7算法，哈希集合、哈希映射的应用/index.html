@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/assets/img/blog11/1.png">
 <meta property="article:published_time" content="2020-08-07T09:35:26.000Z">
-<meta property="article:modified_time" content="2020-08-08T02:42:36.327Z">
+<meta property="article:modified_time" content="2020-08-11T07:32:58.378Z">
 <meta property="article:author" content="HDY">
 <meta property="article:tag" content="algorithm">
 <meta property="article:tag" content="hash">
@@ -74,7 +74,7 @@
 
 		<nav>
 			<a>总文章数 11 |</a>
-			<a>总字数 <span class="post-count">9.6k</span></a>
+			<a>总字数 <span class="post-count">10.9k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -214,7 +214,42 @@
 <p><img src="/assets/img/blog11/1.png" alt="image"></p>
 <p>可以看到，这个循环为4–&gt;16–&gt;37–&gt;58–&gt;89–&gt;145–&gt;42–&gt;20–&gt;4</p>
 <p>找到这个循环以后，实现判断是否为快乐数，就非常简单了，不断调用happy算法，如果结果出现4，说明进入了这个循环，为非快乐数；反之则一定会出现1，为快乐数。</p>
-<h2 id="哈希映射"><a href="#哈希映射" class="headerlink" title="哈希映射"></a>哈希映射</h2>
+<h2 id="哈希映射"><a href="#哈希映射" class="headerlink" title="哈希映射"></a>哈希映射</h2><p>哈希映射最常见的应用就是移动窗口。比如在遍历一个数组时，使用左右两个指针，这两个指针就代表着这个窗口的左右边界，我们按照一定的规则依次移动两个指针，使得窗口不断滑动并记录窗口的状态，最终找出符合要求的窗口。但是，使用指针实现滑动窗口往往会比较麻烦且低效，而哈希表却相对更加高效。</p>
+<h3 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h3><p>替换后的最长重复字符<br>给你一个仅由大写英文字母组成的字符串，你可以将任意位置上的字符替换成另外的字符，总共可最多替换 k 次。在执行上述操作后，找到包含重复字母的最长子串的长度。</p>
+<p>注意:</p>
+<blockquote>
+<p>注意:<br>字符串长度 和 k 不会超过 104。字符串长度 和 k 不会超过 104。</p>
+</blockquote>
+<p>示例 1:</p>
+<pre><code>输入:
+s = &quot;ABAB&quot;, k = 2
+输出:
+4
+
+解释:
+用两个&#39;A&#39;替换为两个&#39;B&#39;,反之亦然。</code></pre>
+<p>示例 2:</p>
+<pre><code>输入:
+s = &quot;AABABBA&quot;, k = 1
+输出:
+4
+
+解释:
+将中间的一个&#39;A&#39;替换为&#39;B&#39;,字符串变为 &quot;AABBBBA&quot;。
+子串 &quot;BBBB&quot; 有最长重复字母, 答案为 4。</code></pre>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>对于这个字符串<code>s</code>，我们使用一个滑动窗口于上面，<code>left</code>表示左边界，<code>right</code>表示有边界。如果滑动窗口内的子字符串满足题目的要求，那么这个字符串的长度就为<code>right-left+1</code>。</p>
+<p>所以，问题的关键就成了判断一个窗口内的字符串内容是否满足要求。因为可以随便替换字符串里的内容，只对替换次数有要求，那么为了能找到尽可能长的这样的字符串，那么我们只需要找出这段字符串中，出现次数最多的字符，然后将其他的字符替换就好了，替换次数就可以表示为<code>字符串长度-出现次数最多的字符的次数</code>。于是，只要算出来的替换次数小于<code>k</code>，那么这就是个合法字符串，即此窗口是满足条件的。</p>
+<p>最后，我们让<code>right=0、left=0</code>，如果窗口满足条件，就一直右移<code>right</code>，直到<code>right</code>移动到最右边时结束；当窗口不满足条件，就右移<code>left</code>；于是，最终的答案就为这些满足条件的窗口中最长的那个。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">characterReplacement</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = s.length();</span><br><span class="line">        <span class="keyword">if</span>(!size) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(k &gt;= size) <span class="keyword">return</span> size;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>, ans = <span class="number">0</span>, num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span> c;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; <span class="built_in">map</span>;</span><br><span class="line">        <span class="keyword">while</span>(right &lt;size)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">map</span>.count(s[right]) &lt;= <span class="number">0</span>) <span class="built_in">map</span>.insert(&#123;s[right], <span class="number">1</span>&#125;);</span><br><span class="line">            <span class="keyword">else</span> ++<span class="built_in">map</span>[s[right]];</span><br><span class="line">            c = primChar(<span class="built_in">map</span>);</span><br><span class="line">            num = right-left+<span class="number">1</span>-<span class="built_in">map</span>[c];</span><br><span class="line">            <span class="keyword">if</span>(num &gt; k)&#123;</span><br><span class="line">                --<span class="built_in">map</span>[s[left]];</span><br><span class="line">                <span class="keyword">if</span>(!<span class="built_in">map</span>[s[left]]) <span class="built_in">map</span>.erase(s[left]);</span><br><span class="line">                ++left;</span><br><span class="line">            &#125;<span class="keyword">else</span> ans = max(ans, right-left+<span class="number">1</span>);</span><br><span class="line">            right++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">char</span> <span class="title">primChar</span><span class="params">(<span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; <span class="built_in">map</span>)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span> c;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i=<span class="built_in">map</span>.begin(); i!=<span class="built_in">map</span>.end(); ++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i-&gt;second &gt; max)&#123;</span><br><span class="line">                max = i-&gt;second;</span><br><span class="line">                c = i-&gt;first;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码改进"><a href="#代码改进" class="headerlink" title="代码改进"></a>代码改进</h3><p>上面的算法虽然是能够得到正确结果的，但是，其时间复杂度和空间复杂度都行，可以做出许多改进。</p>
+<p>首先，我们在每次移动<code>right</code>后，都要重新判断窗口内出现次数最多的字符，但是实际上，如果移动<code>right</code>后，新加入的字符为原本就出现次数最多的字符，那么我们就完全没必要再判断了，直接继续移动<code>right</code>即可。</p>
+<p>其次，当我们移动<code>right</code>后，发现新的窗口不满足条件，那么我们就得移动<code>left</code>了。最初采取的措施是每次移动<code>left</code>后，也都要重新判断窗口内出现次数最多的字符，但是实际上，如果移动<code>left</code>后，丢弃的那个字符不为原窗口出现次数最多的字符，那么我们也完全没必要判断了，直接继续移动<code>right</code>即可。</p>
+<h3 id="更高效的代码"><a href="#更高效的代码" class="headerlink" title="更高效的代码"></a>更高效的代码</h3><p>上面虽然提出了改进的方法，但是整个算法仍旧不够简洁、高效。</p>
+<p>因为我们需要找出的是满足条件的最长的子序列，其本质就是找出一个子序列中，存在最多的重复的字符，并且这个子序列满足条件。所以，其实我们的滑动窗口可以是一个只能变大的窗口，当出现更大的重复字符的数量时，才会使窗口变大。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">characterReplacement</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = s.length();</span><br><span class="line">        <span class="keyword">if</span>(!size) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(k &gt;= size) <span class="keyword">return</span> size;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>, ans = <span class="number">0</span>, repeatNum= <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; <span class="built_in">map</span>;<span class="comment">//表中记录各元素出现的次数</span></span><br><span class="line">        <span class="keyword">while</span>(right &lt;size)&#123;</span><br><span class="line">            ++<span class="built_in">map</span>[s[right]];</span><br><span class="line">            repeatNum = max(repeatNum, <span class="built_in">map</span>[s[right]]);<span class="comment">//最多的重复字符的数量</span></span><br><span class="line">            <span class="keyword">if</span>(right-left+<span class="number">1</span>-repeatNum &gt; k)&#123;<span class="comment">//主要关心窗口长度</span></span><br><span class="line">                --<span class="built_in">map</span>[s[left]];</span><br><span class="line">                ++left;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = max(ans, right-left+<span class="number">1</span>);</span><br><span class="line">            ++right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
       
 	
 		
@@ -369,7 +404,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88-unordered-set"><span class="toc-number">1.</span> <span class="toc-text">哈希集合(unordered_set)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">例题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.</span> <span class="toc-text">算法实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84"><span class="toc-number">2.</span> <span class="toc-text">哈希映射</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88-unordered-set"><span class="toc-number">1.</span> <span class="toc-text">哈希集合(unordered_set)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">例题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.</span> <span class="toc-text">算法实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84"><span class="toc-number">2.</span> <span class="toc-text">哈希映射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="toc-number">2.1.</span> <span class="toc-text">例题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="toc-number">2.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.3.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%94%B9%E8%BF%9B"><span class="toc-number">2.4.</span> <span class="toc-text">代码改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E9%AB%98%E6%95%88%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="toc-number">2.5.</span> <span class="toc-text">更高效的代码</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -379,7 +414,7 @@
 </aside>
 
 <div align="center" class="post-count">
-	字数：767字 
+	字数：2k字 
 </div>
 
   
@@ -391,28 +426,21 @@
   
 
   
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'd59609200a63b0ee33de',
-  	clientSecret: 'd5eb433efa8075a46a3c6ec2744212acdb1ab01e',
-  	repo: 'hudongyue1.github.io',
-  	owner: 'hudongyue1',
-  	admin: ['hudongyue1'],
-  	id: 'Fri Aug 07 2020 17:35:26 GMT+0800',
-  	distractionFreeMode: 'true'
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/08/07/8-7%E7%AE%97%E6%B3%95%EF%BC%8C%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88%E3%80%81%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84%E7%9A%84%E5%BA%94%E7%94%A8/",
+  owner: 'hudongyue1',
+  repo: 'hudongyue1.github.io',
+  oauth: {
+    client_id: '9b73c5ae8c12b747ac8d',
+    client_secret: 'f891d4a22d2c0cc74231697d968e8b71242e5e97',
+  },
 })
-gitalk.render('gitalk-container') 
-}
+gitment.render('gitment-ctn')
 </script>
-
-  
-
   
 
 
@@ -550,7 +578,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+                <a href="javascript:void(0)" class="js-tag color1">graph</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,11 +590,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">graph</a>
+                <a href="javascript:void(0)" class="js-tag color5">hash</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hash</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,6 +731,5 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
-  <script type="text/javascript" src="dist/canvas-nest.js"></script>
 </body>
 </html>

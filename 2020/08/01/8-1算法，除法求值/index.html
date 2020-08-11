@@ -74,7 +74,7 @@
 
 		<nav>
 			<a>总文章数 11 |</a>
-			<a>总字数 <span class="post-count">9.6k</span></a>
+			<a>总字数 <span class="post-count">10.9k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -408,28 +408,21 @@ queries(问题方程式) = [ [&quot;a&quot;, &quot;c&quot;], [&quot;b&quot;, &qu
   
 
   
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'd59609200a63b0ee33de',
-  	clientSecret: 'd5eb433efa8075a46a3c6ec2744212acdb1ab01e',
-  	repo: 'hudongyue1.github.io',
-  	owner: 'hudongyue1',
-  	admin: ['hudongyue1'],
-  	id: 'Sat Aug 01 2020 13:32:58 GMT+0800',
-  	distractionFreeMode: 'true'
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/08/01/8-1%E7%AE%97%E6%B3%95%EF%BC%8C%E9%99%A4%E6%B3%95%E6%B1%82%E5%80%BC/",
+  owner: 'hudongyue1',
+  repo: 'hudongyue1.github.io',
+  oauth: {
+    client_id: '9b73c5ae8c12b747ac8d',
+    client_secret: 'f891d4a22d2c0cc74231697d968e8b71242e5e97',
+  },
 })
-gitalk.render('gitalk-container') 
-}
+gitment.render('gitment-ctn')
 </script>
-
-  
-
   
 
 
@@ -567,7 +560,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+                <a href="javascript:void(0)" class="js-tag color1">graph</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,11 +572,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">graph</a>
+                <a href="javascript:void(0)" class="js-tag color5">hash</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hash</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,6 +713,5 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
-  <script type="text/javascript" src="dist/canvas-nest.js"></script>
 </body>
 </html>
