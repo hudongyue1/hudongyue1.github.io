@@ -7,16 +7,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: DFS | HDY blog</title>
+  <title>8-12算法，利用哈希表实现图的深拷贝 | HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HDY blog">
-<meta property="og:url" content="http://yoursite.com/tags/DFS/index.html">
+  <meta name="description" content="题目描述给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node &amp;#123;     public int val;     public List&lt;Node&gt; neighbors; &amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8-12算法，利用哈希表实现图的深拷贝">
+<meta property="og:url" content="http://yoursite.com/2020/08/12/8-12%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%A9%E7%94%A8%E5%93%88%E5%B8%8C%E8%A1%A8%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%9A%84%E6%B7%B1%E6%8B%B7%E8%B4%9D/index.html">
 <meta property="og:site_name" content="HDY blog">
-<meta property="og:description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
+<meta property="og:description" content="题目描述给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node &amp;#123;     public int val;     public List&lt;Node&gt; neighbors; &amp;#125;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-12T02:13:52.000Z">
+<meta property="article:modified_time" content="2020-08-12T02:38:08.638Z">
 <meta property="article:author" content="HDY">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="graph">
+<meta property="article:tag" content="hash">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="HDY blog" type="application/atom+xml">
@@ -160,120 +165,279 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-8-12算法，利用哈希表实现图的深拷贝" class="article article-type-post " itemscope itemprop="blogPost">
   
-  
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/04/8-4%EF%BC%8C%E5%88%A4%E6%96%AD%E6%9C%89%E5%90%91%E5%9B%BE%E6%98%AF%E5%90%A6%E6%9C%89%E5%9C%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-04T11:10:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
+	
+	<center><p>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/04/8-4%EF%BC%8C%E5%88%A4%E6%96%AD%E6%9C%89%E5%90%91%E5%9B%BE%E6%98%AF%E5%90%A6%E6%9C%89%E5%9C%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">8-4，判断有向图是否有圈的两种常用方法</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      8-12算法，利用哈希表实现图的深拷贝
     </h1>
   
+</p></center>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-        <div class="article-info info-on-right">
-          
+<a href="/2020/08/12/8-12%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%A9%E7%94%A8%E5%93%88%E5%B8%8C%E8%A1%A8%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%9A%84%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="archive-article-date">
+  	<time datetime="2020-08-12T02:13:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。</p>
+<p>图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。</p>
+<pre><code>class Node &#123;
+    public int val;
+    public List&lt;Node&gt; neighbors;
+&#125;</code></pre>
+<a id="more"></a>
+<p>测试用例格式：</p>
+<p>简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val = 1），第二个节点值为 2（val = 2），以此类推。该图在测试用例中使用邻接列表表示。</p>
+<p>邻接列表 是用于表示有限图的无序列表的集合。每个列表都描述了图中节点的邻居集。</p>
+<p>给定节点将始终是图中的第一个节点（值为 1）。你必须将 给定节点的拷贝 作为对克隆图的引用返回。</p>
+<p>示例 1：</p>
+<pre><code>输入：adjList = [[2,4],[1,3],[2,4],[1,3]]
+输出：[[2,4],[1,3],[2,4],[1,3]]
+解释：
+图中有 4 个节点。
+节点 1 的值是 1，它有两个邻居：节点 2 和 4 。
+节点 2 的值是 2，它有两个邻居：节点 1 和 3 。
+节点 3 的值是 3，它有两个邻居：节点 2 和 4 。
+节点 4 的值是 4，它有两个邻居：节点 1 和 3 。</code></pre>
+<p>示例 2：</p>
+<pre><code>输入：adjList = [[]]
+输出：[[]]
+解释：输入包含一个空列表。该图仅仅只有一个值为 1 的节点，它没有任何邻居。</code></pre>
+<p>示例 3：</p>
+<pre><code>输入：adjList = []
+输出：[]
+解释：这个图是空的，它不含任何节点。</code></pre>
+<p>提示：</p>
+<blockquote>
+<p>节点数不超过 100 。<br>每个节点值 Node.val 都是唯一的，1 &lt;= Node.val &lt;= 100。<br>无向图是一个简单图，这意味着图中没有重复的边，也没有自环。<br>由于图是无向的，如果节点 p 是节点 q 的邻居，那么节点 q 也必须是节点 p 的邻居。<br>图是连通图，你可以从给定节点访问到所有节点。</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>要对整个图进行深拷贝，首先就一定需要对图进行遍历，然后将每个节点进行深拷贝（即new一个value一样的出来），然后将每个节点的邻接表连上。但是有一个问题，这是一张无向图，所以，如果节点2和1邻接，那么节点1和2也邻接，我们在浏览节点1，并连接他的邻接表的时候，就已经深拷贝了节点2，当我们再次浏览节点2时，不需要再次深拷贝节点2了。于是，我们在遍历图的时候，就必须知道哪些节点是已经浏览过（即深拷贝过的）。</p>
+<p>所以，可以使用一张hash表，key为节点对应的val，value为节点指针。每当我们在浏览一个新的节点以及他的邻接表时，将还未出现过的（即hash表中没有的）节点进行深拷贝，并放入hash表中，对于已经浏览过的（即hash表中已经有的）节点，我们只需要从hash表中取出即可。</p>
+<h2 id="节点定义"><a href="#节点定义" class="headerlink" title="节点定义"></a>节点定义</h2><pre><code>/*
+// Definition for a Node.
+class Node &#123;
+public:
+    int val;
+    vector&lt;Node*&gt; neighbors;
+    Node() &#123;
+        val = 0;
+        neighbors = vector&lt;Node*&gt;();
+    &#125;
+    Node(int _val) &#123;
+        val = _val;
+        neighbors = vector&lt;Node*&gt;();
+    &#125;
+    Node(int _val, vector&lt;Node*&gt; _neighbors) &#123;
+        val = _val;
+        neighbors = _neighbors;
+    &#125;
+&#125;;
+*/</code></pre>
+<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现 1"></a>代码实现 1</h2><p>首先可以使用深度优先即（DFS），遍历图。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">Node* <span class="title">cloneGraph</span><span class="params">(Node* node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span>(!node-&gt;neighbors.size()) <span class="keyword">return</span> <span class="keyword">new</span> Node(<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, Node*&gt; <span class="built_in">map</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;Node*&gt; stk;</span><br><span class="line">        Node *myNode = <span class="keyword">new</span> Node(<span class="number">1</span>);</span><br><span class="line">        Node *tempNode;</span><br><span class="line">        <span class="built_in">map</span>.insert(&#123;<span class="number">1</span>, myNode&#125;);</span><br><span class="line">        stk.push(node);</span><br><span class="line">        <span class="keyword">while</span>(!stk.empty())&#123;</span><br><span class="line">            Node *theNode = stk.top(); stk.pop();</span><br><span class="line">            tempNode = <span class="built_in">map</span>[theNode-&gt;val];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> i=theNode-&gt;neighbors.begin(); i!=theNode-&gt;neighbors.end(); ++i)&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">map</span>.count((*i)-&gt;val) &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">                    Node *newNode = <span class="keyword">new</span> Node((*i)-&gt;val);</span><br><span class="line">                    <span class="built_in">map</span>.insert(&#123;newNode-&gt;val, newNode&#125;);</span><br><span class="line">                    tempNode-&gt;neighbors.push_back(newNode);</span><br><span class="line">                    stk.push(*i);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    tempNode-&gt;neighbors.push_back(<span class="built_in">map</span>[(*i)-&gt;val]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> myNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现 2"></a>代码实现 2</h2><p>还可以使用广度优先（BFS)，遍历图。在这里改动很小，只需要将stack换成queue即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">Node* <span class="title">cloneGraph</span><span class="params">(Node* node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span>(!node-&gt;neighbors.size()) <span class="keyword">return</span> <span class="keyword">new</span> Node(<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, Node*&gt; <span class="built_in">map</span>;</span><br><span class="line">        <span class="built_in">queue</span>&lt;Node*&gt; que;</span><br><span class="line">        Node *myNode = <span class="keyword">new</span> Node(<span class="number">1</span>);</span><br><span class="line">        Node *tempNode;</span><br><span class="line">        <span class="built_in">map</span>.insert(&#123;<span class="number">1</span>, myNode&#125;);</span><br><span class="line">        que.push(node);</span><br><span class="line">        <span class="keyword">while</span>(!que.empty())&#123;</span><br><span class="line">            Node *theNode = que.front(); que.pop();</span><br><span class="line">            tempNode = <span class="built_in">map</span>[theNode-&gt;val];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> i=theNode-&gt;neighbors.begin(); i!=theNode-&gt;neighbors.end(); ++i)&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">map</span>.count((*i)-&gt;val) &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">                    Node *newNode = <span class="keyword">new</span> Node((*i)-&gt;val);</span><br><span class="line">                    <span class="built_in">map</span>.insert(&#123;newNode-&gt;val, newNode&#125;);</span><br><span class="line">                    tempNode-&gt;neighbors.push_back(newNode);</span><br><span class="line">                    que.push(*i);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    tempNode-&gt;neighbors.push_back(<span class="built_in">map</span>[(*i)-&gt;val]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> myNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+	
+		
+		
+		  <div>
+			<blockquote>
+				<strong>本文作者：</strong>
+				
+				  HDY
+				
+				<br>
+		
+			</blockquote>
+			
+			
+			<hr>
+				<center><strong></strong></center>
+			<hr>
+		  </div>
+		
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>奥力给<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">graph</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-08-02T01:29:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/02/8-2%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/">8-2算法，二叉树展开为链表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stack</a>
-        		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">binary tree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hash</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/12/8-12%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%A9%E7%94%A8%E5%93%88%E5%B8%8C%E8%A1%A8%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%9A%84%E6%B7%B1%E6%8B%B7%E8%B4%9D/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/08/07/8-7%E7%AE%97%E6%B3%95%EF%BC%8C%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88%E3%80%81%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84%E7%9A%84%E5%BA%94%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">8-7算法，哈希集合、哈希映射的应用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E5%AE%9A%E4%B9%89"><span class="toc-number">3.</span> <span class="toc-text">节点定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">4.</span> <span class="toc-text">代码实现 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2"><span class="toc-number">5.</span> <span class="toc-text">代码实现 2</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+<div align="center" class="post-count">
+	字数：1.1k字 
+</div>
+
+
+  
+  
   
 
-    
+  
+
+  
+ 
+
+
+  
 
 
           </div>
@@ -310,9 +474,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
