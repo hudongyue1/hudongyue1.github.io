@@ -7,17 +7,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | HDY blog</title>
+  <title>8-15算法，移除盒子(动态规划) | HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HDY blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="题目描述给出一些不同颜色的盒子，盒子的颜色由数字表示，即不同的数字表示不同的颜色。你将经过若干轮操作去去掉盒子，直到所有的盒子都去掉为止。每一轮你可以移除具有相同颜色的连续 k 个盒子（k &gt;&#x3D; 1），这样一轮之后你将得到 k*k 个积分。当你将所有盒子都去掉之后，求你能获得的最大积分和。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8-15算法，移除盒子(动态规划)">
+<meta property="og:url" content="http://yoursite.com/2020/08/15/8-15%E7%AE%97%E6%B3%95%EF%BC%8C%E7%A7%BB%E9%99%A4%E7%9B%92%E5%AD%90-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="HDY blog">
-<meta property="og:description" content="����HDY�ĸ��˲��ͣ�������¼ѧϰ��֪ʶ">
+<meta property="og:description" content="题目描述给出一些不同颜色的盒子，盒子的颜色由数字表示，即不同的数字表示不同的颜色。你将经过若干轮操作去去掉盒子，直到所有的盒子都去掉为止。每一轮你可以移除具有相同颜色的连续 k 个盒子（k &gt;&#x3D; 1），这样一轮之后你将得到 k*k 个积分。当你将所有盒子都去掉之后，求你能获得的最大积分和。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/assets/img/blog14/1.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/blog14/2.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/blog14/3.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/blog14/4.png">
+<meta property="article:published_time" content="2020-08-15T04:52:06.000Z">
+<meta property="article:modified_time" content="2020-08-15T06:25:43.753Z">
 <meta property="article:author" content="HDY">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/blog14/1.png">
   
     <link rel="alternative" href="/atom.xml" title="HDY blog" type="application/atom+xml">
   
@@ -160,37 +169,120 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-8-15算法，移除盒子-动态规划" class="article article-type-post " itemscope itemprop="blogPost">
   
-  
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-w">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/31/7-31%E7%AE%97%E6%B3%95%EF%BC%8C%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-07-31T10:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
+	
+	<center><p>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/31/7-31%E7%AE%97%E6%B3%95%EF%BC%8C%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F(%E4%B8%80)/">7-31算法，被围绕的区域（一）</a>
+    <h1 class="article-title_code_ant" itemprop="name">
+      8-15算法，移除盒子(动态规划)
     </h1>
   
+</p></center>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-        <div class="article-info info-on-right">
-          
+<a href="/2020/08/15/8-15%E7%AE%97%E6%B3%95%EF%BC%8C%E7%A7%BB%E9%99%A4%E7%9B%92%E5%AD%90-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="archive-article-date">
+  	<time datetime="2020-08-15T04:52:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-15</time>
+</a>
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给出一些不同颜色的盒子，盒子的颜色由数字表示，即不同的数字表示不同的颜色。<br>你将经过若干轮操作去去掉盒子，直到所有的盒子都去掉为止。每一轮你可以移除具有相同颜色的连续 k 个盒子（k &gt;= 1），这样一轮之后你将得到 k*k 个积分。<br>当你将所有盒子都去掉之后，求你能获得的最大积分和。</p>
+<a id="more"></a>
+
+<p>示例：</p>
+<pre><code>输入：boxes = [1,3,2,2,2,3,4,3,1]
+输出：23
+解释：
+[1, 3, 2, 2, 2, 3, 4, 3, 1]
+----&gt; [1, 3, 3, 4, 3, 1] (3*3=9 分)
+----&gt; [1, 3, 3, 3, 1] (1*1=1 分)
+----&gt; [1, 1] (3*3=9 分)
+----&gt; [] (2*2=4 分)</code></pre>
+<p>提示：</p>
+<blockquote>
+<p>1 &lt;= boxes.length &lt;= 100<br>1 &lt;= boxes[i] &lt;= 100</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看见这种按照一定的规则求出给定数组的值，并且无法直接算出这个值的时候，就需要把这个给定数组拆分，然后求拆分后的子数组的值。于是自然而然就想到了动态规划。</p>
+<p>最初想的是使用<code>dp[l][r]</code>数组来存放消除<code>boxes</code>里第<code>l-r</code>的盒子能获得的最大积分，但是这存在一个问题。比如当<code>boxes</code>为<code>[2,3,2]</code>时，<code>dp[0][2]</code>的最大值很明显应该为<code>1+4=5</code>（即先消除3，然后消除两个2）。若将问题拆分，<code>dp[0][2]</code>无非是使用<code>dp[0][0]、dp[1][1]、dp[2][2]、dp[0][1]、dp[1][2]</code>表示出来，但是遗憾的是，<code>dp[0][2]</code>没有办法用子数组的值表示出来，因为消除<code>3</code>以后，会导致两个<code>2</code>连接在一起，而子问题却是分成了dp[0][0]、dp[2][2]两个部分。</p>
+<p>所以，使用<code>dp[l][r][k]</code>来表示消除<code>boxes</code>里第<code>l-r</code>的盒子以及<code>boxes[r]</code>右边的<code>k</code>个和<code>boxes[r]</code>相同颜色的盒子能够得到的最大积分。<code>boxes[r]</code>右边的那k个盒子最初不一定是相邻的，但是我们可以假设通过一定的操作将阻隔在中间的盒子先消除了。<br>假设我们有一个<code>boxes</code>为</p>
+<p><img src="/assets/img/blog14/1.png" alt="images"></p>
+<p>那么<code>dp[2][6][0]</code>即为</p>
+<p><img src="/assets/img/blog14/2.png" alt="images"></p>
+<p><code>dp[2][4][2]</code>为</p>
+<p><img src="/assets/img/blog14/3.png" alt="images"></p>
+<p>而我们最终要求的其实就是<code>dp[0][8][0]</code>。<br>于是我们就可以对这样的问题拆成<strong>3部分</strong>，依旧是上面的<code>boxes</code>，我们就可以有如下几种操作：</p>
+<ol>
+<li>我们直接将最后一个<code>3</code>消除并获得<code>1</code>积分，$$ dp[0][8][0] = dp[0][7][0] + 1^2 $$</li>
+<li>我们从<code>r</code>往前面搜索，找到<code>boxes[7]</code>和<code>boxes[8]</code><strong>相等且相邻</strong>都为<code>3</code>（很容易想到,两个一起消除得到的积分肯定更高。所以当在往前面搜索时，找到了与<code>boxes[r]</code><strong>相等且相邻</strong>的，那么<code>dp[l][r][k]</code>就等于<code>dp[l][--r][--k]</code>），那么将这两个<code>3</code>一起消除并获得<code>4</code>积分，<br>$$ dp[0][8][0] = dp[0][6][0] + 2^2 $$</li>
+<li>我们继续往前面搜索，发现boxes[4]和boxes[8]、boxes[7]相等为3，那么我们将这三个3放一起，<br>$$ dp[0][8][0] = dp[0][4][2] + dp[5][6][0] $$</li>
+<li>继续搜索，$$ dp[0][8][0] = dp[0][2][2] + dp[3][6][0] $$</li>
+<li>再继续，$$ dp[0][8][0] = dp[0][1][2] + dp[2][6][0] $$，此时已经找出了boxes中所有的3。<br>而最终dp[0][8][0]就是上面这些情况的最大值。</li>
+</ol>
+<p>所以，我们得到的动态规划的转移方程可以表示为：</p>
+<p><img src="/assets/img/blog14/4.png" alt="images"></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> dp[<span class="number">100</span>][<span class="number">100</span>][<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeBoxes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; boxes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> f(boxes, <span class="number">0</span>, boxes.size()<span class="number">-1</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; boxes, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; r) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(dp[l][r][k]) <span class="keyword">return</span> dp[l][r][k];</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r &amp;&amp; boxes[r] == boxes[r<span class="number">-1</span>])&#123;<span class="comment">//相邻且相等时,注意l小于r</span></span><br><span class="line">            --r; ++k;</span><br><span class="line">        &#125;</span><br><span class="line">        dp[l][r][k] = f(boxes, l, r<span class="number">-1</span>, <span class="number">0</span>) + <span class="built_in">pow</span>(k+<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=l; i&lt;r; ++i)&#123;<span class="comment">//不相邻但相等时</span></span><br><span class="line">            <span class="keyword">if</span>(boxes[i] == boxes[r])</span><br><span class="line">                dp[l][r][k] = max(dp[l][r][k], f(boxes, l, i, k+<span class="number">1</span>)+f(boxes, i+<span class="number">1</span>, r<span class="number">-1</span>, <span class="number">0</span>) );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[l][r][k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+	
+		
+		
+		  <div>
+			<blockquote>
+				<strong>本文作者：</strong>
+				
+				  HDY
+				
+				<br>
+		
+			</blockquote>
+			
+			
+			<hr>
+				<center><strong></strong></center>
+			<hr>
+		  </div>
+		
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>奥力给<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,153 +292,129 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/15/8-15%E7%AE%97%E6%B3%95%EF%BC%8C%E7%A7%BB%E9%99%A4%E7%9B%92%E5%AD%90-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/31/7-31%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="archive-article-date">
-  	<time datetime="2020-07-31T06:35:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/14/8-14-%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">8-14 常用排序算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/31/7-31%E5%B9%B6%E6%9F%A5%E9%9B%86/">7-31 并查集</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">data structure</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+<div align="center" class="post-count">
+	字数：1k字 
+</div>
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/30/7-30%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="archive-article-date">
-  	<time datetime="2020-07-30T02:36:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/30/7-30%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">7-30算法：有效的括号</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/30/%E4%BD%BF%E7%94%A8github-pages%EF%BC%8C%E7%99%BD%E5%AB%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-07-30T02:36:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/30/%E4%BD%BF%E7%94%A8github-pages%EF%BC%8C%E7%99%BD%E5%AB%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用github pages，白嫖个人博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
+ 
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">上一页</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
+
   
 
 
@@ -384,8 +452,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
