@@ -7,24 +7,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>7-31 并查集 | HDY blog</title>
+  <title>9-1算法，使用动态规划 | HDY blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="并查集是一种树型的数据结构，用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。常常在使用中以森林来表示。">
+  <meta name="description" content="预测赢家题目描述给定一个表示分数的非负整数数组。 玩家 1 从数组任意一端拿取一个分数，随后玩家 2 继续从剩余数组任意一端拿取分数，然后玩家 1 拿，…… 。每次一个玩家只能拿取一个分数，分数被拿取之后不再可取。直到没有剩余分数可取时游戏结束。最终获得分数总和最多的玩家获胜。 给定一个表示分数的数组，预测玩家1是否会成为赢家。你可以假设每个玩家的玩法都会使他的分数最大化。 示例 1： 输入：[1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="7-31 并查集">
-<meta property="og:url" content="http://yoursite.com/2020/07/31/7-31%E5%B9%B6%E6%9F%A5%E9%9B%86/index.html">
+<meta property="og:title" content="9-1算法，使用动态规划">
+<meta property="og:url" content="http://yoursite.com/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="HDY blog">
-<meta property="og:description" content="并查集是一种树型的数据结构，用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。常常在使用中以森林来表示。">
+<meta property="og:description" content="预测赢家题目描述给定一个表示分数的非负整数数组。 玩家 1 从数组任意一端拿取一个分数，随后玩家 2 继续从剩余数组任意一端拿取分数，然后玩家 1 拿，…… 。每次一个玩家只能拿取一个分数，分数被拿取之后不再可取。直到没有剩余分数可取时游戏结束。最终获得分数总和最多的玩家获胜。 给定一个表示分数的数组，预测玩家1是否会成为赢家。你可以假设每个玩家的玩法都会使他的分数最大化。 示例 1： 输入：[1">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/assets/img/blog3/1.png">
-<meta property="og:image" content="http://yoursite.com/assets/img/blog3/2.png">
-<meta property="article:published_time" content="2020-07-31T06:35:35.000Z">
-<meta property="article:modified_time" content="2020-07-31T11:45:55.901Z">
+<meta property="article:published_time" content="2020-09-01T01:05:05.000Z">
+<meta property="article:modified_time" content="2020-09-02T15:30:48.620Z">
 <meta property="article:author" content="HDY">
-<meta property="article:tag" content="Union Find">
-<meta property="article:tag" content="data structure">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/blog3/1.png">
   
     <link rel="alternative" href="/atom.xml" title="HDY blog" type="application/atom+xml">
   
@@ -167,7 +164,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-7-31并查集" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-9-1算法，使用动态规划" class="article article-type-post " itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
@@ -178,7 +175,7 @@
 	<center><p>
   
     <h1 class="article-title_code_ant" itemprop="name">
-      7-31 并查集
+      9-1算法，使用动态规划
     </h1>
   
 </p></center>
@@ -189,8 +186,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/07/31/7-31%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="archive-article-date">
-  	<time datetime="2020-07-31T06:35:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
+<a href="/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="archive-article-date">
+  	<time datetime="2020-09-01T01:05:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
 </a>
         
       </header>
@@ -198,46 +195,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>并查集是一种树型的数据结构，用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。常常在使用中以森林来表示。</p>
-<a id="more"></a>
+        <h2 id="预测赢家"><a href="#预测赢家" class="headerlink" title="预测赢家"></a>预测赢家</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个表示分数的非负整数数组。 玩家 1 从数组任意一端拿取一个分数，随后玩家 2 继续从剩余数组任意一端拿取分数，然后玩家 1 拿，…… 。每次一个玩家只能拿取一个分数，分数被拿取之后不再可取。直到没有剩余分数可取时游戏结束。最终获得分数总和最多的玩家获胜。</p>
+<p>给定一个表示分数的数组，预测玩家1是否会成为赢家。你可以假设每个玩家的玩法都会使他的分数最大化。</p>
+<p>示例 1：</p>
+<pre><code>输入：[1, 5, 2]
+输出：False
+解释：一开始，玩家1可以从1和2中进行选择。
+如果他选择 2（或者 1 ），那么玩家 2 可以从 1（或者 2 ）和 5 中进行选择。如果玩家 2 选择了 5 ，那么玩家 1 则只剩下 1（或者 2 ）可选。
+所以，玩家 1 的最终分数为 1 + 2 = 3，而玩家 2 为 5 。
+因此，玩家 1 永远不会成为赢家，返回 False 。</code></pre>
+<p>示例 2：</p>
+<pre><code>输入：[1, 5, 233, 7]
+输出：True
+解释：玩家 1 一开始选择 1 。然后玩家 2 必须从 5 和 7 中进行选择。无论玩家 2 选择了哪个，玩家 1 都可以选择 233 。
+     最终，玩家 1（234 分）比玩家 2（12 分）获得更多的分数，所以返回 True，表示玩家 1 可以成为赢家。</code></pre>
+<p>提示：</p>
+<blockquote>
+<p>1 &lt;= 给定的数组长度 &lt;= 20.<br>数组里所有分数都为非负数且不会大于 10000000 。<br>如果最终两个玩家的分数相等，那么玩家 1 仍为赢家。</p>
+</blockquote>
+<h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><blockquote>
+<p>一个能够使用动态规划求解的问题，很关键的一点就是找出其中的重复子问题。</p>
+</blockquote>
+<p>使用<code>nums</code>数组来存储这个分数数组，假定数组中一共有<code>len</code>个数。<br>使用<code>dp</code>数组来存储玩家1比玩家2高出的分数，那么当我们在分析<code>nums</code>数组的子数组时，很容易知道<br>当数组的长度为1时，那么先选的玩家（玩家1）一定获胜，所以玩家1比玩家2高出的分数即为<code>dp[i][i] = nums[i]</code>,<br>当数组的长度为2时，那么先选的玩家（玩家1）也一定获胜，因为如果有一种选法可以使得玩家2获胜，那么玩家1就可以做出与之前相反的选择来保证胜利,两个玩家的分数差的绝对值即为<br><code>dp[i][i+1] = abs(nums[i] - nums[i+1])</code>。实际上，当数组的长度为偶数时，这个说法都成立。<br>当数组的长度继续增加时，先选的玩家选择队首或者队尾的某个数以后，后选的玩家能够在接下来的选择中取得最高分的选择就一定是之前数组长度更短时，先选的玩家的选法，所以，此时两个玩家的分数差可以表示为<code>dp[i][j] = max(nums[i] - dp[i+1][j], nums[j] - dp[i][j-1])</code>。这就得到了状态转移方程，使用子问题的解决当前问题。</p>
+<p>在这里需要注意所有的数组索引都不能超出范围。</p>
+<p>所以到最后，我们只需要判断<code>dp[0][len-1] &gt; 0</code>是否成立，就可以知道玩家1能否获胜了。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">PredictTheWinner</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(!len%<span class="number">2</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> dp[len][len];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; ++i) &#123;</span><br><span class="line">            dp[i][i] = nums[i];</span><br><span class="line">            <span class="keyword">if</span>(i &lt; len<span class="number">-1</span>)</span><br><span class="line">                dp[i][i+<span class="number">1</span>] = <span class="built_in">abs</span>(nums[i] - nums[i+<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> L=<span class="number">2</span>; L&lt;len; ++L)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; ++i)</span><br><span class="line">                <span class="keyword">if</span>(L+i &lt; len) &#123;</span><br><span class="line">                    dp[i][i+L] = max(nums[i] - dp[i+<span class="number">1</span>][i+L], nums[i+L] - dp[i][i+L<span class="number">-1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][len<span class="number">-1</span>] &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="1-并查集的主要操作"><a href="#1-并查集的主要操作" class="headerlink" title="1. 并查集的主要操作"></a>1. 并查集的主要操作</h2><ol>
-<li>初始化<br>把每个点所在集合初始化为其自身。<br>通常来说，这个步骤在每次使用该数据结构时只需要执行一次，无论何种实现方式，时间复杂度均为O(N)。</li>
-<li>查找<br>查找元素所在的集合，即根节点。</li>
-<li>合并<br>将两个元素所在的集合合并为一个集合。<br>通常来说，合并之前，应先判断两个元素是否属于同一集合，这可用上面的“查找”操作实现。</li>
-</ol>
-<h2 id="2-并查集代码实现"><a href="#2-并查集代码实现" class="headerlink" title="2. 并查集代码实现"></a>2. 并查集代码实现</h2><ul>
-<li>1.初始化</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length(pre); i++)</span><br><span class="line">    pre[i] = i;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>2.查找</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">unionSearch</span><span class="params">(<span class="keyword">int</span> root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> son = root;</span><br><span class="line">    root = pre[root];<span class="comment">//找到root的直接上级</span></span><br><span class="line">    <span class="keyword">while</span>(root != pre[root])<span class="comment">//root的上级不是自己，即root不是根</span></span><br><span class="line">        root = pre[root];</span><br><span class="line">    <span class="keyword">return</span> root;<span class="comment">//找到根</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>3.合并</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">join</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;<span class="comment">//将下x、y所在的集合合并</span></span><br><span class="line">    <span class="keyword">int</span> root1 = unionSearch(x);</span><br><span class="line">    <span class="keyword">int</span> root2 = unionSearch(y);</span><br><span class="line">    <span class="keyword">if</span> root1 != root2</span><br><span class="line">        pre[root1] = root2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-并查集的优化"><a href="#3-并查集的优化" class="headerlink" title="3. 并查集的优化"></a>3. 并查集的优化</h2><ul>
-<li>1.路径压缩</li>
-</ul>
-<p>我们只需要知道某个元素是否在集合内，而无需知道这个集合的具体构成，也就是说，我们完全可以不在乎集合内部结构是否发生过变化。为了能够最快的查找到集合的根，最佳的做法就是，所有的其他元素都挂载在这个根下面，这样，只需要一次查找，就能知道根了。所以在查询的时候，对集合结构进行这样的优化</p>
-<p>如这样的结构：</p>
-<p><img src="/assets/img/blog3/1.png" alt="avatar"> –&gt; <img src="/assets/img/blog3/2.png" alt="avatar"></p>
-<p>优化算法:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">unionSearch</span><span class="params">(<span class="keyword">int</span> root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> son, temp;</span><br><span class="line">    son = root;</span><br><span class="line">    <span class="keyword">while</span>(root != pre[root])</span><br><span class="line">        root = pre[root]<span class="comment">//找到了根root</span></span><br><span class="line">    <span class="keyword">while</span>(son != root)&#123;<span class="comment">//如果son不是根，那么将pre[son]设为root</span></span><br><span class="line">        temp = pre[son];</span><br><span class="line">        pre[son] = root;</span><br><span class="line">        son = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>2.按秩合并</li>
-</ul>
-<p>在合并两个集合的时候，高度较小的集合的根作为合并后的集合的根。这样的话，得到的新的集合的结构，更加接近理想的那种集合，并且新的集合的高度是不会改变的。初始时，默认只有一个元素的集合高度为0。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">join</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> root1 = unionSearch(x);</span><br><span class="line">    <span class="keyword">int</span> root2 = unionSearch(y);</span><br><span class="line">    <span class="keyword">if</span>(root1 != root2)&#123;</span><br><span class="line">        <span class="keyword">if</span>(hight[root1] &gt; hight[root2])<span class="comment">//root1集合更高</span></span><br><span class="line">            pre[root2] = root1;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(hight[root1] &lt; hight[root2])<span class="comment">//root2集合更高</span></span><br><span class="line">            pre[root1] = root2;</span><br><span class="line">        <span class="keyword">else</span>&#123;<span class="comment">//两集合一样高，默认root1做根</span></span><br><span class="line">            hight[root1]++;</span><br><span class="line">            pre[root2] = root1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
+<h2 id="石子游戏"><a href="#石子游戏" class="headerlink" title="石子游戏"></a>石子游戏</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。</p>
+<p>游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。</p>
+<p>亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。</p>
+<p>假设亚历克斯和李都发挥出最佳水平，当亚历克斯赢得比赛时返回 true ，当李赢得比赛时返回 false 。</p>
+<p>示例：</p>
+<pre><code>输入：[5,3,4,5]
+输出：true
+解释：
+亚历克斯先开始，只能拿前 5 颗或后 5 颗石子 。
+假设他取了前 5 颗，这一行就变成了 [3,4,5] 。
+如果李拿走前 3 颗，那么剩下的是 [4,5]，亚历克斯拿走后 5 颗赢得 10 分。
+如果李拿走后 5 颗，那么剩下的是 [3,4]，亚历克斯拿走后 4 颗赢得 9 分。
+这表明，取前 5 颗石子对亚历克斯来说是一个胜利的举动，所以我们返回 true 。</code></pre>
+<p>提示：</p>
+<blockquote>
+<p>2 &lt;= piles.length &lt;= 500<br>piles.length 是偶数。<br>1 &lt;= piles[i] &lt;= 500<br>sum(piles) 是奇数。sum(piles) 是奇数。</p>
+</blockquote>
+<h3 id="思路分析-1"><a href="#思路分析-1" class="headerlink" title="思路分析"></a>思路分析</h3><h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3>
       
 	
 		
@@ -289,11 +290,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">data structure</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
         		</li>
       		
 		</ul>
@@ -349,7 +350,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/31/7-31%E5%B9%B6%E6%9F%A5%E9%9B%86/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -363,18 +364,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/31/7-31%E7%AE%97%E6%B3%95%EF%BC%8C%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F(%E4%B8%80)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/07/9-7%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          7-31算法，被围绕的区域（一）
+          9-7算法，最小生成树总结
         
       </div>
     </a>
   
   
-    <a href="/2020/07/30/7-30%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">7-30算法：有效的括号</div>
+    <a href="/2020/08/30/8-30%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">8-30最短路径算法总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -401,7 +402,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%9A%84%E4%B8%BB%E8%A6%81%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">1. 并查集的主要操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B9%B6%E6%9F%A5%E9%9B%86%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text">2. 并查集代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">3. 并查集的优化</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6"><span class="toc-number">1.</span> <span class="toc-text">预测赢家</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">思路分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F"><span class="toc-number">2.</span> <span class="toc-text">石子游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="toc-number">2.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90-1"><span class="toc-number">2.2.</span> <span class="toc-text">思路分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码实现</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -411,7 +412,7 @@
 </aside>
 
 <div align="center" class="post-count">
-	字数：660字 
+	字数：1.3k字 
 </div>
 
 

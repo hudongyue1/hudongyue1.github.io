@@ -67,8 +67,8 @@
 		</nav>
 
 		<nav>
-			<a>总文章数 16 |</a>
-			<a>总字数 <span class="post-count">17.4k</span></a>
+			<a>总文章数 18 |</a>
+			<a>总字数 <span class="post-count">20.1k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -161,6 +161,231 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-9-7算法，最小生成树总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+	
+	<center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/09/07/9-7%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/">9-7算法，最小生成树总结</a>
+    </h1>
+  
+</p></center>
+        
+        
+<a href="/2020/09/07/9-7%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-09-07T11:32:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-07</time>
+</a>
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>常用的两种求最小生成树的算法是<strong>Prim</strong>算法和<strong>Kruskal</strong>算法，这里对个算法做一个总结。</p>
+<p>Prim算法：只可以用于连通图，当图中存在不连通的点时，此算法不适用。<br>Kruskal算法：可以用于非连通图，这种情况下求出来的是各个子连通图的最小生成树。</p>
+        
+      
+	
+		
+		
+		  <div hidden="hidden"></div>
+	
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">graph</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/07/9-7%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+<div align="center" class="post-count">
+	字数：1.3k字 
+</div>
+
+
+
+  
+    <article id="post-9-1算法，使用动态规划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+	
+	<center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">9-1算法，使用动态规划</a>
+    </h1>
+  
+</p></center>
+        
+        
+<a href="/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="archive-article-date">
+  	<time datetime="2020-09-01T01:05:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
+</a>
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="预测赢家"><a href="#预测赢家" class="headerlink" title="预测赢家"></a>预测赢家</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个表示分数的非负整数数组。 玩家 1 从数组任意一端拿取一个分数，随后玩家 2 继续从剩余数组任意一端拿取分数，然后玩家 1 拿，…… 。每次一个玩家只能拿取一个分数，分数被拿取之后不再可取。直到没有剩余分数可取时游戏结束。最终获得分数总和最多的玩家获胜。</p>
+<p>给定一个表示分数的数组，预测玩家1是否会成为赢家。你可以假设每个玩家的玩法都会使他的分数最大化。</p>
+<p>示例 1：</p>
+<pre><code>输入：[1, 5, 2]
+输出：False
+解释：一开始，玩家1可以从1和2中进行选择。
+如果他选择 2（或者 1 ），那么玩家 2 可以从 1（或者 2 ）和 5 中进行选择。如果玩家 2 选择了 5 ，那么玩家 1 则只剩下 1（或者 2 ）可选。
+所以，玩家 1 的最终分数为 1 + 2 = 3，而玩家 2 为 5 。
+因此，玩家 1 永远不会成为赢家，返回 False 。</code></pre>
+<p>示例 2：</p>
+<pre><code>输入：[1, 5, 233, 7]
+输出：True
+解释：玩家 1 一开始选择 1 。然后玩家 2 必须从 5 和 7 中进行选择。无论玩家 2 选择了哪个，玩家 1 都可以选择 233 。
+     最终，玩家 1（234 分）比玩家 2（12 分）获得更多的分数，所以返回 True，表示玩家 1 可以成为赢家。</code></pre>
+<p>提示：</p>
+<blockquote>
+<p>1 &lt;= 给定的数组长度 &lt;= 20.<br>数组里所有分数都为非负数且不会大于 10000000 。<br>如果最终两个玩家的分数相等，那么玩家 1 仍为赢家。</p>
+</blockquote>
+<h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><blockquote>
+<p>一个能够使用动态规划求解的问题，很关键的一点就是找出其中的重复子问题。</p>
+</blockquote>
+<p>使用<code>nums</code>数组来存储这个分数数组，假定数组中一共有<code>len</code>个数。<br>使用<code>dp</code>数组来存储玩家1比玩家2高出的分数，那么当我们在分析<code>nums</code>数组的子数组时，很容易知道<br>当数组的长度为1时，那么先选的玩家（玩家1）一定获胜，所以玩家1比玩家2高出的分数即为<code>dp[i][i] = nums[i]</code>,<br>当数组的长度为2时，那么先选的玩家（玩家1）也一定获胜，因为如果有一种选法可以使得玩家2获胜，那么玩家1就可以做出与之前相反的选择来保证胜利,两个玩家的分数差的绝对值即为<br><code>dp[i][i+1] = abs(nums[i] - nums[i+1])</code>。实际上，当数组的长度为偶数时，这个说法都成立。<br>当数组的长度继续增加时，先选的玩家选择队首或者队尾的某个数以后，后选的玩家能够在接下来的选择中取得最高分的选择就一定是之前数组长度更短时，先选的玩家的选法，所以，此时两个玩家的分数差可以表示为<code>dp[i][j] = max(nums[i] - dp[i+1][j], nums[j] - dp[i][j-1])</code>。这就得到了状态转移方程，使用子问题的解决当前问题。</p>
+<p>在这里需要注意所有的数组索引都不能超出范围。</p>
+<p>所以到最后，我们只需要判断<code>dp[0][len-1] &gt; 0</code>是否成立，就可以知道玩家1能否获胜了。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">PredictTheWinner</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(!len%<span class="number">2</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> dp[len][len];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; ++i) &#123;</span><br><span class="line">            dp[i][i] = nums[i];</span><br><span class="line">            <span class="keyword">if</span>(i &lt; len<span class="number">-1</span>)</span><br><span class="line">                dp[i][i+<span class="number">1</span>] = <span class="built_in">abs</span>(nums[i] - nums[i+<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> L=<span class="number">2</span>; L&lt;len; ++L)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; ++i)</span><br><span class="line">                <span class="keyword">if</span>(L+i &lt; len) &#123;</span><br><span class="line">                    dp[i][i+L] = max(nums[i] - dp[i+<span class="number">1</span>][i+L], nums[i+L] - dp[i][i+L<span class="number">-1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][len<span class="number">-1</span>] &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="石子游戏"><a href="#石子游戏" class="headerlink" title="石子游戏"></a>石子游戏</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。</p>
+<p>游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。</p>
+<p>亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。</p>
+<p>假设亚历克斯和李都发挥出最佳水平，当亚历克斯赢得比赛时返回 true ，当李赢得比赛时返回 false 。</p>
+<p>示例：</p>
+<pre><code>输入：[5,3,4,5]
+输出：true
+解释：
+亚历克斯先开始，只能拿前 5 颗或后 5 颗石子 。
+假设他取了前 5 颗，这一行就变成了 [3,4,5] 。
+如果李拿走前 3 颗，那么剩下的是 [4,5]，亚历克斯拿走后 5 颗赢得 10 分。
+如果李拿走后 5 颗，那么剩下的是 [3,4]，亚历克斯拿走后 4 颗赢得 9 分。
+这表明，取前 5 颗石子对亚历克斯来说是一个胜利的举动，所以我们返回 true 。</code></pre>
+<p>提示：</p>
+<blockquote>
+<p>2 &lt;= piles.length &lt;= 500<br>piles.length 是偶数。<br>1 &lt;= piles[i] &lt;= 500<br>sum(piles) 是奇数。sum(piles) 是奇数。</p>
+</blockquote>
+<h3 id="思路分析-1"><a href="#思路分析-1" class="headerlink" title="思路分析"></a>思路分析</h3><h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3>
+      
+	
+		
+		
+		  <div hidden="hidden"></div>
+	
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+<div align="center" class="post-count">
+	字数：1.3k字 
+</div>
+
+
+
   
     <article id="post-8-30最短路径算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   
@@ -894,195 +1119,6 @@
 
 
   
-    <article id="post-8-4 判断有向图是否有圈的两种常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-	
-	<center><p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/08/04/8-4%20%E5%88%A4%E6%96%AD%E6%9C%89%E5%90%91%E5%9B%BE%E6%98%AF%E5%90%A6%E6%9C%89%E5%9C%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">8-4，判断有向图是否有圈的两种常用方法</a>
-    </h1>
-  
-</p></center>
-        
-        
-<a href="/2020/08/04/8-4%20%E5%88%A4%E6%96%AD%E6%9C%89%E5%90%91%E5%9B%BE%E6%98%AF%E5%90%A6%E6%9C%89%E5%9C%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-04T11:10:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有向无环图(Directed Acycling Graph)：是图中没有回路(环)的有向图。是一类具有代表性的图，主要用于研究工程项目的工序问题、工程时间进度问题等。</p>
-<p>那么首先，讨论判断一个有向图是否有圈的算法，以及他的应用。</p>
-        
-      
-	
-		
-		
-		  <div hidden="hidden"></div>
-	
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">graph</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/04/8-4%20%E5%88%A4%E6%96%AD%E6%9C%89%E5%90%91%E5%9B%BE%E6%98%AF%E5%90%A6%E6%9C%89%E5%9C%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-<div align="center" class="post-count">
-	字数：561字 
-</div>
-
-
-
-  
-    <article id="post-8-4算法，课程表(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-	
-	<center><p>
-  
-    <h1 itemprop="name">
-      <a class="article-title_code_ant" href="/2020/08/04/8-4%E7%AE%97%E6%B3%95%EF%BC%8C%E8%AF%BE%E7%A8%8B%E8%A1%A8(%E4%B8%80)/">8-4算法，课程表(一)</a>
-    </h1>
-  
-</p></center>
-        
-        
-<a href="/2020/08/04/8-4%E7%AE%97%E6%B3%95%EF%BC%8C%E8%AF%BE%E7%A8%8B%E8%A1%A8(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-08-04T08:39:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你这个学期必须选修<code>numCourse</code>门课程，记为<code> 0 </code>到<code> numCourse-1 </code>。</p>
-<p>在选修某些课程之前需要一些先修课程。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示他们：<code>[0,1]</code></p>
-<p>给定课程总量以及它们的先决条件，请你判断是否可能完成所有课程的学习？</p>
-        
-      
-	
-		
-		
-		  <div hidden="hidden"></div>
-	
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/04/8-4%E7%AE%97%E6%B3%95%EF%BC%8C%E8%AF%BE%E7%A8%8B%E8%A1%A8(%E4%B8%80)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-<div align="center" class="post-count">
-	字数：656字 
-</div>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
@@ -1208,11 +1244,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Union Find</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">data structure</a>
+                <a href="javascript:void(0)" class="js-tag color1">stack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1220,7 +1252,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stack</a>
+                <a href="javascript:void(0)" class="js-tag color1">Union Find</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">data structure</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1248,11 +1284,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">recursion</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+                <a href="javascript:void(0)" class="js-tag color5">recursion</a>
               </li>
              
               <li class="article-tag-list-item">
