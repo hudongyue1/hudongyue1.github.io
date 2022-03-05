@@ -1,236 +1,293 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>HDY blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HDY blog</title><meta name="author" content="HDY"><meta name="copyright" content="HDY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="HDY blog">
 <meta property="og:url" content="http://hudongyue1.github.io/project/index.html">
 <meta property="og:site_name" content="HDY blog">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://hudongyue1.github.io/project/img/portrait.png">
 <meta property="article:author" content="HDY">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/project/atom.xml" title="HDY blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/project/css/style.css">
+<meta name="twitter:image" content="http://hudongyue1.github.io/project/img/portrait.png"><link rel="shortcut icon" href="/project/img/signature.png"><link rel="canonical" href="http://hudongyue1.github.io/project/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/project/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/project/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HDY blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-03-05 13:27:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-<meta name="generator" content="Hexo 5.4.1"></head>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/project/" id="logo">HDY blog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/project/">Home</a>
-        
-          <a class="main-nav-link" href="/project/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hudongyue1.github.io/project"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/project/2022/03/02/test/" class="article-date">
-  <time datetime="2022-03-02T07:08:55.000Z" itemprop="datePublished">2022-03-02</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/project/2022/03/02/test/">test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hudongyue1.github.io/project/2022/03/02/test/" data-id="cl097xagl0000fou76wdl07uc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/project/img/portrait.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/project/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/project/tags/"><div class="headline">标签</div><div class="length-num">13</div></a></div><div class="data-item"><a href="/project/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/project/">HDY blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/09/07/9-7%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/" title="9-7算法，最小生成树总结">9-7算法，最小生成树总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-07T11:32:01.000Z" title="发表于 2020-09-07 19:32:01">2020-09-07</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/graph/">graph</a></span></div><div class="content">常用的两种求最小生成树的算法是Prim算法和Kruskal算法，这里对个算法做一个总结。
+Prim算法：只可以用于连通图，当图中存在不连通的点时，此算法不适用。Kruskal算法：可以用于非连通图，这种情况下求出来的是各个子连通图的最小生成树。
 
 
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/project/2022/03/02/hello-world/" class="article-date">
-  <time datetime="2022-03-02T06:48:08.005Z" itemprop="datePublished">2022-03-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/project/2022/03/02/hello-world/">Hello World</a>
-    </h1>
-  
+Prim算法算法描述Prim算法和Dijkstra算法很相似：1.初始化一个空集合和一个记录数组，并从一个顶点出发，将这个顶点加入集合中；2.然后寻找与这个顶点之间距离最近（权值最低）的且没有在集合中的点，将寻找到的点加入集合，并使用这个点的数据对记录数组进行更新；3.以新加入的点作为顶点重复步骤2，直到所有的顶点都在集合中。
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+不同之处在于，Dijstra算法中记录数组记录的是其余点到出发顶点的最短距离，而Prim算法中记录数组记录的是其余点到集合中任意点的最短距离
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hudongyue1.github.io/project/2022/03/02/hello-world/" data-id="cl097qtip0000jgu7h1nyd0o1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include &lt;ios ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92(%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6%E3%80%81%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F)/" title="9-1算法，使用动态规划(预测赢家、石子游戏)">9-1算法，使用动态规划(预测赢家、石子游戏)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-01T01:05:05.000Z" title="发表于 2020-09-01 09:05:05">2020-09-01</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/DP/">DP</a></span></div><div class="content">预测赢家题目描述给定一个表示分数的非负整数数组。 玩家 1 从数组任意一端拿取一个分数，随后玩家 2 继续从剩余数组任意一端拿取分数，然后玩家 1 拿，…… 。每次一个玩家只能拿取一个分数，分数被拿取之后不再可取。直到没有剩余分数可取时游戏结束。最终获得分数总和最多的玩家获胜。
+给定一个表示分数的数组，预测玩家1是否会成为赢家。你可以假设每个玩家的玩法都会使他的分数最大化。
 
 
-  
+示例 1：
+输入：[1, 5, 2]
+输出：False
+解释：一开始，玩家1可以从1和2中进行选择。
+如果他选择 2（或者 1 ），那么玩家 2 可以从 1（或者 2 ）和 5 中进行选择。如果玩家 2 选择了 5 ，那么玩家 1 则只剩下 1（或者 2 ）可选。
+所以，玩家 1 的最终分数为 1 + 2 = 3，而玩家 2 为 5 。
+因此，玩家 1 永远不会成为赢家，返回 False 。
+
+示例 2：
+输入：[1, 5, 233, 7]
+输出：True
+解释：玩家 1 一开始选择 1 。然后玩家 2 必须从 5 和 7 中进行选择。无论玩家 2 选择了哪个，玩家 1 都可以选择 233 。
+     最终， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/08/30/8-30%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" title="8-30最短路径算法总结">8-30最短路径算法总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-30T01:53:38.000Z" title="发表于 2020-08-30 09:53:38">2020-08-30</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/graph/">graph</a></span></div><div class="content">所谓最短路径问题是指：如果从图中某一顶点（源点）到达另一顶点（终点）的路径可能不止一条，如何找到一条路径使得沿此路径上各边的权值总和（称为路径长度）达到最小。
+以下总结四种最短路径算法（**c++**）
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+Dijkstra算法
+dijkstra算法只能用于边的权值都为正数的图，且只可算出起始节点到其他节点的最短路径（即单源最短路径）
 
-  
-    
+算法描述：使用三个辅助数组，数组S存储顶点是否被访问过，数组D存储当前的最短路径长度，数组Path存储节点的最短路径上的前驱节点。
+以这样一个无向图来举例：
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/03/">三月 2022</a></li></ul>
-    </div>
-  </div>
+1.我们假定从节点V1出发，对这些数组进行初始化，此时V1是已经访问过的了，所以S[1]=true ，能够与节点V1直接相连的，比如节点v2、V4，所以D[2]=5,D[4]=2，Path[2]=1,Path[4]=1;；而对于不能与节点V1直接相连的，距离就为无穷大，前驱节点初始为-1，比如D[3]=∞,Path[3]=-1。
+所以初始时，我们就应该得到这样的三个数组：
+
+2.接着，我们从还未被访问过的节点中，选出与节点V1距离最短的节点，在这里就应该是节点V4，将这个节点设置为已访问（即S[ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/08/15/8-15%E7%AE%97%E6%B3%95%EF%BC%8C%E7%A7%BB%E9%99%A4%E7%9B%92%E5%AD%90-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="8-15算法，移除盒子(动态规划)">8-15算法，移除盒子(动态规划)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-15T04:52:06.000Z" title="发表于 2020-08-15 12:52:06">2020-08-15</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/DP/">DP</a></span></div><div class="content">题目描述给出一些不同颜色的盒子，盒子的颜色由数字表示，即不同的数字表示不同的颜色。你将经过若干轮操作去去掉盒子，直到所有的盒子都去掉为止。每一轮你可以移除具有相同颜色的连续 k 个盒子（k &gt;= 1），这样一轮之后你将得到 k*k 个积分。当你将所有盒子都去掉之后，求你能获得的最大积分和。
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/project/2022/03/02/test/">test</a>
-          </li>
-        
-          <li>
-            <a href="/project/2022/03/02/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+示例：
+输入：boxes = [1,3,2,2,2,3,4,3,1]
+输出：23
+解释：
+[1, 3, 2, 2, 2, 3, 4, 3, 1]
+----&gt; [1, 3, 3, 4, 3, 1] (3*3=9 分)
+----&gt; [1, 3, 3, 3, 1] (1*1=1 分)
+----&gt; [1, 1] (3*3=9 分)
+----&gt; [] (2*2=4 分)
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 HDY<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/project/" class="mobile-nav-link">Home</a>
-  
-    <a href="/project/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+提示：
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+1 &lt;= boxes.length &lt;= 1001 &lt;= boxes[i] &lt;= 100
 
+思路看见这种按照一定的规则求出给定数组的值，并且无法直接算出这个值的时候，就需要把这个给定数组拆分，然后求拆分后的子数组的值。于是自然而然就想到了动态规划。
+最初想的是使用dp[l] ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/08/14/8-14%20%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="8-14 常用排序算法">8-14 常用排序算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-14T02:03:56.000Z" title="发表于 2020-08-14 10:03:56">2020-08-14</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/sort/">sort</a></span></div><div class="content">对数据结构中非常重要的十大内部排序算法以及七大查找算法做一个总结排序算法可按照如下进行分类：
 
-  
-<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.css">
-
-  
-<script src="/project/fancybox/jquery.fancybox.pack.js"></script>
+内部排序：指的是只用到了电脑内存而不使用外存的排序方式。
 
 
 
 
-<script src="/project/js/script.js"></script>
+比较排序比较排序，顾名思义，即需要通过比较两个元素的大小关系来确定先后顺序。而在比较排序中，又可以分为交换、插入、选择和归并四类。
+交换：根据比较结果交换两个元素。插入：将当前遍历到的元素插入到之前已经排好序的序列中。选择：不断选出当前剩余序列中最大(或最小)的元素出来。
+交换1. 冒泡排序（Bubble Sort）冒泡排序是三大基础排序中的一种，比较简单，不再赘述，直接上代码。
+1234567void BubbleSort(int* arr, int n) &#123;	for(int i=0; i&lt;n; ++i)		for(int j=0; j&lt;n-i-1; ++j) &#123;		if(arr[j] &gt; arr[j+1])			swap(arr[j], arr[j+1]);	&#125;&#125;
+
+2. 快速排序（Quick Sort）快速排序是对冒泡排序的一种改进，使用了分治思想。
+
+思想：通过 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/08/12/8-12%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%A9%E7%94%A8%E5%93%88%E5%B8%8C%E8%A1%A8%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%9A%84%E6%B7%B1%E6%8B%B7%E8%B4%9D/" title="8-12算法，利用哈希表实现图的深拷贝">8-12算法，利用哈希表实现图的深拷贝</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-12T02:13:52.000Z" title="发表于 2020-08-12 10:13:52">2020-08-12</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/graph/">graph</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/hash/">hash</a></span></div><div class="content">题目描述给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。
+图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。
+class Node &#123;
+    public int val;
+    public List&lt;Node&gt; neighbors;
+&#125;
 
 
+测试用例格式：
+简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val = 1），第二个节点值为 2（val = 2），以此类推。该图在测试用例中使用邻接列表表示。
+邻接列表 是用于表示有限图的无序列表的集合。每个列表都描述了图中节点的邻居集。
+给定节点将始终是图中的第一个节点（值为 1）。你必须将 给定节点的拷贝 作为对克隆图的引用返回。
+示例 1：
+输入：adjList = [[2,4],[1,3],[2,4],[1,3]]
+输出：[[2,4],[1,3],[2,4],[1,3]]
+解释：
+图中有 4 个节点。
+节点 1 的值是 1，它有两个邻居：节点 2 和 4 。
+节点 2 的值是 2，它有两个邻居：节点 1 和 3 。
+节点  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/08/07/8-7%E7%AE%97%E6%B3%95%EF%BC%8C%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88%E3%80%81%E5%93%88%E5%B8%8C%E6%98%A0%E5%B0%84%E7%9A%84%E5%BA%94%E7%94%A8/" title="8-7算法，哈希集合、哈希映射的应用">8-7算法，哈希集合、哈希映射的应用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-07T09:35:26.000Z" title="发表于 2020-08-07 17:35:26">2020-08-07</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/hash/">hash</a></span></div><div class="content">哈希集合(unordered_set)哈希集合可以用来存储不重复的元素，利用哈希表快速搜索的特性，可以使得查找重复元素的速度比较快。
 
 
-  </div>
-</body>
-</html>
+例题编写一个算法来判断一个数 n 是不是快乐数。
+「快乐数」定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是无限循环但始终变不到 1。如果 可以变为 1，那么这个数就是快乐数。
+如果 n 是快乐数就返回 True ；不是，则返回 False 。
+示例：
+1234567输入：19输出：true解释：12 + 92 = 8282 + 22 = 6862 + 82 = 10012 + 02 + 02 = 1
+
+思路首先，这些数肯定可以被分为快乐数和非快乐数。对于快乐数，我们按照happy算法，不断重复，最后一定可以得到1。对于非快乐数，我们只知道他始终无法变到1，无法确定其变化规律。但是，我们可以看到，一个四位的数，按照上面的算法，他最大能得到 $ 9^2+9^2+9^2+9^2 = 324 $, 可以看到会从四位数退化到三位数，同理，高于四位的数字也会随着算法进行退化到三位。而三位数最大能 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/08/07/8-7%20%E5%93%88%E5%B8%8C%E8%A1%A8-%E6%95%A3%E5%88%97%E8%A1%A8/" title="8-7 哈希表(散列表)">8-7 哈希表(散列表)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-07T02:27:42.000Z" title="发表于 2020-08-07 10:27:42">2020-08-07</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/data-structure/">data structure</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/hash/">hash</a></span></div><div class="content">简介哈希表是一种使用哈希函数组织数据的数据结构，它支持快速插入和搜索。
+
+
+原理哈希表（又称散列表）的原理为：借助 哈希函数，将键映射到存储桶地址。更确切地说，
+
+首先开辟一定长度的，具有连续物理地址的桶数组；
+
+当我们插入一个新的键时，哈希函数将决定该键应该分配到哪个桶中，并将该键存储在相应的桶中；
+
+当我们想要搜索一个键时，哈希表将使用哈希函数来找到对应的桶，并在该桶中进行搜索。
+
+
+作者：力扣 (LeetCode)链接：https://leetcode-cn.com/leetbook/read/hash-table-plus/kd67i/
+
+
+可以联想到cache的工作原理。
+
+负载因子实际利用桶的个数与桶的总数 的比值，称为负载因子，反映了哈希表的装满程度。负载因子太低了，会使得大量存储空间被浪费，负载因子太高了，出现哈希冲突的概率就会难以接受。比较合理的负载因子是 0.7，如果数据量是 7，则会创建 10 个桶，以此类推。随着插入的数据量的增加，计算机会逐渐增加桶的个数，并选择合适的哈希函数，使得数据经过映射之后能均匀地分布在桶中。
+哈希冲突不同的key被哈希函数映射到了同一 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/08/05/8-5%E7%AE%97%E6%B3%95%EF%BC%8C%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D/" title="8-5算法，打家劫舍">8-5算法，打家劫舍</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-05T11:03:03.000Z" title="发表于 2020-08-05 19:03:03">2020-08-05</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/DP/">DP</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/recursion/">recursion</a></span></div><div class="content">打家劫舍题一共有三道，首先看看最简单的：
+打家劫舍（一）题目描述你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
+给定一个代表每个房屋存放金额的非负整数数组，计算你 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。
+
+
+示例 1：
+输入：[1,2,3,1]
+输出：4
+解释：偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。
+     偷窃到的最高金额 = 1 + 3 = 4 。
+
+示例 2：
+输入：[2,7,9,3,1]
+输出：12
+解释：偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷
+窃 5 号房屋 (金额 = 1)。
+     偷窃到的最高金额 = 2 + 9 + 1 = 12 。
+
+提示：
+
+0 &lt;= nums.length &lt;= 1000 &lt;= nums[i] &lt;= 400
+
+思路这是一道很明显的动态规划题，规定用数组dp来存储偷窃到的最高金额，数组n ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/project/2020/08/04/8-4%20%E5%88%A4%E6%96%AD%E6%9C%89%E5%90%91%E5%9B%BE%E6%98%AF%E5%90%A6%E6%9C%89%E5%9C%88%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" title="8-4，判断有向图是否有圈的两种常用方法">8-4，判断有向图是否有圈的两种常用方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-04T11:10:28.000Z" title="发表于 2020-08-04 19:10:28">2020-08-04</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/project/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/graph/">graph</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/project/tags/DFS/">DFS</a></span></div><div class="content">有向无环图(Directed Acycling Graph)：是图中没有回路(环)的有向图。是一类具有代表性的图，主要用于研究工程项目的工序问题、工程时间进度问题等。
+那么首先，讨论判断一个有向图是否有圈的算法，以及他的应用。
+
+
+1. 拓扑排序算法描述：
+对一个有向无圈图，首先找出所有的入度为0的点，访问、操作这些点；
+删除所有的入度为0的点，以及所有的和这些点相连的边；
+重复1、2步操作直到没有入度为0的点，对一个有向无圈图来说，最后一定会一个点都不剩了，否则，说明这个有向图是有圈的。
+
+2. DFS算法描述：
+规定，对以访问的点设1，正在访问的点设0，未访问的点设-1；
+从任意点出发，对该点深度优先搜索，如果在搜索的过程中发现下一个点为0，出现了重复访问，说明有圈；
+当所有的点都变成1，仍旧没有出现重复访问，说明没有圈。
+
+3. 应用在选择课程的时候，有的课程必须要求有先修课程，那么将这些课程的关系抽象出来即是有向无圈图。例题可以参考上一篇文章：课程表(一)
+在这里采用DFS重新实现该算法：
+12345678910111213141516171819202122232425262 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/project/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/project/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/project/img/portrait.png" onerror="this.onerror=null;this.src='/project/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">HDY</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/project/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/project/tags/"><div class="headline">标签</div><div class="length-num">13</div></a></div><div class="card-info-data-item"><a href="/project/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hudongyue1"><i class="fab fa-github"></i><span>My GitHub</span></a></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2020/09/07/9-7%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/" title="9-7算法，最小生成树总结">9-7算法，最小生成树总结</a><time datetime="2020-09-07T11:32:01.000Z" title="发表于 2020-09-07 19:32:01">2020-09-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92(%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6%E3%80%81%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F)/" title="9-1算法，使用动态规划(预测赢家、石子游戏)">9-1算法，使用动态规划(预测赢家、石子游戏)</a><time datetime="2020-09-01T01:05:05.000Z" title="发表于 2020-09-01 09:05:05">2020-09-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2020/08/30/8-30%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" title="8-30最短路径算法总结">8-30最短路径算法总结</a><time datetime="2020-08-30T01:53:38.000Z" title="发表于 2020-08-30 09:53:38">2020-08-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2020/08/15/8-15%E7%AE%97%E6%B3%95%EF%BC%8C%E7%A7%BB%E9%99%A4%E7%9B%92%E5%AD%90-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="8-15算法，移除盒子(动态规划)">8-15算法，移除盒子(动态规划)</a><time datetime="2020-08-15T04:52:06.000Z" title="发表于 2020-08-15 12:52:06">2020-08-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2020/08/14/8-14%20%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="8-14 常用排序算法">8-14 常用排序算法</a><time datetime="2020-08-14T02:03:56.000Z" title="发表于 2020-08-14 10:03:56">2020-08-14</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/project/tags/BFS/" style="font-size: 1.1em; color: #999">BFS</a> <a href="/project/tags/DFS/" style="font-size: 1.2em; color: #999da3">DFS</a> <a href="/project/tags/DP/" style="font-size: 1.3em; color: #99a1ac">DP</a> <a href="/project/tags/Union-Find/" style="font-size: 1.3em; color: #99a1ac">Union Find</a> <a href="/project/tags/algorithm/" style="font-size: 1.5em; color: #99a9bf">algorithm</a> <a href="/project/tags/binary-tree/" style="font-size: 1.1em; color: #999">binary tree</a> <a href="/project/tags/blog/" style="font-size: 1.1em; color: #999">blog</a> <a href="/project/tags/data-structure/" style="font-size: 1.2em; color: #999da3">data structure</a> <a href="/project/tags/graph/" style="font-size: 1.4em; color: #99a5b6">graph</a> <a href="/project/tags/hash/" style="font-size: 1.3em; color: #99a1ac">hash</a> <a href="/project/tags/recursion/" style="font-size: 1.1em; color: #999">recursion</a> <a href="/project/tags/sort/" style="font-size: 1.1em; color: #999">sort</a> <a href="/project/tags/stack/" style="font-size: 1.2em; color: #999da3">stack</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/project/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/project/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/project/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">17</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-03-05T05:27:44.164Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By HDY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/project/js/utils.js"></script><script src="/project/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
