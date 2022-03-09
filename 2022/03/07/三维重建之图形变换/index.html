@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://hudongyue.com//assets/img/graphic_transfer/cover.png/assets/img/graphic_transfer/cover.png">
 <meta property="article:published_time" content="2022-03-07T14:00:01.000Z">
-<meta property="article:modified_time" content="2022-03-07T15:18:13.969Z">
+<meta property="article:modified_time" content="2022-03-09T05:31:56.898Z">
 <meta property="article:author" content="HDY">
 <meta property="article:tag" content="computer vision">
 <meta property="article:tag" content="computer graphics">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-03-07 23:18:13'
+  postUpdate: '2022-03-09 13:31:56'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -255,7 +255,7 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/portrait.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HDY blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">三维重建之图形变换</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-07T14:00:01.000Z" title="发表于 2022-03-07 22:00:01">2022-03-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-07T15:18:13.969Z" title="更新于 2022-03-07 23:18:13">2022-03-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="三维重建之图形变换"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><p>依旧是对鲁鹏老师的<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6gKgI5XwSE0&amp;list=PLFI1Cd4723_SQ-h8W0kT3igOoUCYjWRHG">计算机视觉之三维重建课程</a> 进行整理，在加上一些自己的理解。</p>
+</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/portrait.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HDY blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">三维重建之图形变换</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-07T14:00:01.000Z" title="发表于 2022-03-07 22:00:01">2022-03-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-09T05:31:56.898Z" title="更新于 2022-03-09 13:31:56">2022-03-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="三维重建之图形变换"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><p>依旧是对鲁鹏老师的<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6gKgI5XwSE0&amp;list=PLFI1Cd4723_SQ-h8W0kT3igOoUCYjWRHG">计算机视觉之三维重建课程</a> 进行整理，在加上一些自己的理解。</p>
 <p>在进行三维重建时，使用的都是齐次坐标（<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/46292266">为什么要用齐次坐标？</a>），故这里的变换都是针对图形的齐次坐标。</p>
 <h2 id="2D平面中的变换"><a href="#2D平面中的变换" class="headerlink" title="2D平面中的变换"></a>2D平面中的变换</h2><h3 id="·-等距变换"><a href="#·-等距变换" class="headerlink" title="· 等距变换"></a>· 等距变换</h3><p>等距变换是指变化前后，图形中任意两点之间的距离保持不变。用矩阵表示则为：</p>
 <script type="math/tex; mode=display">
@@ -276,18 +276,27 @@ mjx-container[display="true"] + br {
     1
 \end{matrix}\right)</script><p>当上式中的<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="5.44ex" height="1.692ex" role="img" focusable="false" viewBox="0 -666 2404.6 748"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="mo" transform="translate(848.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(1904.6,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container> 时，表示保向变换（即欧式变换，我们日常中最常见平面中的平移、旋转）；当<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="7.2ex" height="1.692ex" role="img" focusable="false" viewBox="0 -666 3182.6 748"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="mo" transform="translate(848.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mo" transform="translate(1904.6,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(2682.6,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container>时，表示逆向变换（即镜像变换）。</p>
 <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="\assets\img\graphic_transfer\1.png" alt="img1"></p>
-<h4 id="保向变换（欧式变换）"><a href="#保向变换（欧式变换）" class="headerlink" title="保向变换（欧式变换）"></a>保向变换（欧式变换）</h4><p>保向变换主要对图形进行平移和旋转操作，其矩阵表示为：</p>
+<h4 id="保向变换（欧式变换）"><a href="#保向变换（欧式变换）" class="headerlink" title="保向变换（欧式变换）"></a>保向变换（欧式变换）</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="\assets\img\graphic_transfer\3.png" alt="img3"></p>
+<p>保向变换主要对图形进行平移和旋转操作，其矩阵表示为：</p>
 <script type="math/tex; mode=display">
 \left(\begin{matrix}
     x'  \\
     y'  \\
     1
 \end{matrix}\right)  = 
-
 \left(\begin{matrix}
      cos\theta & -sin\theta & x_0  \\
      sin\theta & cos\theta & y_0  \\
     0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x  \\
+    y  \\
+    1
+\end{matrix}\right) = 
+\left(\begin{matrix}
+    R & \pmb{t}  \\
+    \pmb{0} & 1 
 \end{matrix}\right)
 \left(\begin{matrix}
     x  \\
@@ -314,8 +323,208 @@ y' = xsin\theta + ycos\theta
 x' = xcos\theta - ysin\theta + x_0\\
 y' = xsin\theta + ycos\theta + x_0
 \end{matrix}\right.</script><p>将上式使用矩阵表示，则为前面的欧式变换矩阵。</p>
-<h2 id="·-相似变换"><a href="#·-相似变换" class="headerlink" title="· 相似变换"></a>· 相似变换</h2><h2 id="·-仿射变换"><a href="#·-仿射变换" class="headerlink" title="· 仿射变换"></a>· 仿射变换</h2><h2 id="·-衍射变换"><a href="#·-衍射变换" class="headerlink" title="· 衍射变换"></a>· 衍射变换</h2><hr>
-<h2 id="3D空间中的变换"><a href="#3D空间中的变换" class="headerlink" title="3D空间中的变换"></a>3D空间中的变换</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">HDY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://hudongyue.com/2022/03/07/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2/">http://hudongyue.com/2022/03/07/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://hudongyue.com" target="_blank">HDY blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/computer-vision/">computer vision</a><a class="post-meta__tags" href="/tags/computer-graphics/">computer graphics</a></div><div class="post_share"><div class="social-share" data-image="/%5Cassets%5Cimg%5Cgraphic_transfer%5Ccover.png%5Cassets%5Cimg%5Cgraphic_transfer%5Ccover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/03/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E6%91%84%E5%83%8F%E6%9C%BA%E6%A8%A1%E5%9E%8B/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/img/camera_model/camera.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">三维重建之摄像机模型</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/03/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E6%91%84%E5%83%8F%E6%9C%BA%E6%A8%A1%E5%9E%8B/" title="三维重建之摄像机模型"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/img/camera_model/camera.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-05</div><div class="title">三维重建之摄像机模型</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/portrait.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">HDY</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hudongyue1"><i class="fab fa-github"></i><span>My GitHub</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2D%E5%B9%B3%E9%9D%A2%E4%B8%AD%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">2D平面中的变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7-%E7%AD%89%E8%B7%9D%E5%8F%98%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">· 等距变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%9D%E5%90%91%E5%8F%98%E6%8D%A2%EF%BC%88%E6%AC%A7%E5%BC%8F%E5%8F%98%E6%8D%A2%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">保向变换（欧式变换）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%C2%B7-%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2"><span class="toc-number">2.</span> <span class="toc-text">· 相似变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%C2%B7-%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="toc-number">3.</span> <span class="toc-text">· 仿射变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%C2%B7-%E8%A1%8D%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="toc-number">4.</span> <span class="toc-text">· 衍射变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text">3D空间中的变换</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/07/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2/" title="三维重建之图形变换">三维重建之图形变换</a><time datetime="2022-03-07T14:00:01.000Z" title="发表于 2022-03-07 22:00:01">2022-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E6%91%84%E5%83%8F%E6%9C%BA%E6%A8%A1%E5%9E%8B/" title="三维重建之摄像机模型">三维重建之摄像机模型</a><time datetime="2022-03-05T12:46:06.000Z" title="发表于 2022-03-05 20:46:06">2022-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/07/9-7%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/" title="9-7算法，最小生成树总结">9-7算法，最小生成树总结</a><time datetime="2020-09-07T11:32:01.000Z" title="发表于 2020-09-07 19:32:01">2020-09-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92(%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6%E3%80%81%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F)/" title="9-1算法，使用动态规划(预测赢家、石子游戏)">9-1算法，使用动态规划(预测赢家、石子游戏)</a><time datetime="2020-09-01T01:05:05.000Z" title="发表于 2020-09-01 09:05:05">2020-09-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/08/30/8-30%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" title="8-30最短路径算法总结">8-30最短路径算法总结</a><time datetime="2020-08-30T01:53:38.000Z" title="发表于 2020-08-30 09:53:38">2020-08-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By HDY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+<h3 id="·-相似变换"><a href="#·-相似变换" class="headerlink" title="· 相似变换"></a>· 相似变换</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="\assets\img\graphic_transfer\4.png" alt="img4"></p>
+<p>相似变换与欧式变换的差异主要是，相似变换可以进行均匀伸缩变化，即分别在<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="1.294ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 572 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g></g></svg></mjx-container>、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.109ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 490 647"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>轴坐标上乘以一个相等的变伸缩倍数，该伸缩变换使用矩阵表示为：</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+    x'  \\
+    y'  \\
+    1
+\end{matrix}\right)  = 
+
+\left(\begin{matrix}
+    s & 0 & 0  \\
+    0 & s & 0  \\
+    0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x  \\
+    y  \\
+    1
+\end{matrix}\right)</script><p>所以，相似变换即可以由前面欧式变换中的平移、旋转和上面的伸缩变换一起得到：</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+    x'  \\
+    y'  \\
+    1
+\end{matrix}\right)  = 
+
+\left(\begin{matrix}
+    s & 0 & 0  \\
+    0 & s & 0  \\
+    0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+     cos\theta & -sin\theta & x_0  \\
+     sin\theta & cos\theta & y_0  \\
+    0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x  \\
+    y  \\
+    1
+\end{matrix}\right) = 
+\left(\begin{matrix}
+     s\ cos\theta & -s\ sin\theta & x_0  \\
+     s\ sin\theta & s\ cos\theta & y_0  \\
+    0 & 0 & 1
+\end{matrix}\right) =
+\left(\begin{matrix}
+    sR & \pmb{t} \\
+    \pmb{0} & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x \\ y \\ 1
+\end{matrix}\right)</script><p>该变换拥有4个自由度，分别是旋转角度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex" xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.618ex" role="img" focusable="false" viewBox="0 -705 469 715"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></g></g></g></svg></mjx-container>、平移距离<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.375ex" xmlns="http://www.w3.org/2000/svg" width="2.282ex" height="1.375ex" role="img" focusable="false" viewBox="0 -442 1008.6 607.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container>、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="2.096ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 926.6 647"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(523,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container>和伸缩倍数<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex" xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.023ex" role="img" focusable="false" viewBox="0 -442 469 452"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g></g></g></svg></mjx-container>。相似变换能够维持原图像中线段间的长度比值、夹角大小等性质。</p>
+<h3 id="·-仿射变换"><a href="#·-仿射变换" class="headerlink" title="· 仿射变换"></a>· 仿射变换</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="\assets\img\graphic_transfer\5.png" alt="img5"></p>
+<p>仿射变换相对于相似变换有着更多的自由度，该变换后，将不再维持线段间的夹角大小。但是，线段间的平行性、平行线段间的长度比值以及图形中面积的比值还是维持不变的。该变换使用矩阵表示为：</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+    x'  \\
+    y'  \\
+    1
+\end{matrix}\right)  = 
+
+\left(\begin{matrix}
+    a & b & x_0  \\
+    c & d & y_0  \\
+    0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x  \\
+    y  \\
+    1
+\end{matrix}\right) =
+\left(\begin{matrix}
+    A & \pmb{t} \\
+    \pmb{0} & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x \\ y \\ 1
+\end{matrix}\right)</script><h3 id="·-射影变换（透视变换）"><a href="#·-射影变换（透视变换）" class="headerlink" title="· 射影变换（透视变换）"></a>· 射影变换（透视变换）</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="\assets\img\graphic_transfer\6.png" alt="img6"></p>
+<p>射影变换即为透视变换，在日常中我们通过眼睛看到的图像，其实就是使用的透视变换，尽管那是在3D空间中做的透视变换，但是其原理是差不多的。透视变换之后，平行线之间的关系将被破坏，但同一直线上的点，将仍旧在一条直线上，且<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BA%A4%E6%AF%94/8857703">共线点之间的交比</a>仍旧维持。该变换使用矩阵表示为：</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+    x'  \\
+    y'  \\
+    1
+\end{matrix}\right)  = 
+
+\left(\begin{matrix}
+    a & b & x_0  \\
+    c & d & y_0  \\
+    v_1 & v_2 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x  \\
+    y  \\
+    1
+\end{matrix}\right) =
+\left(\begin{matrix}
+    A & \pmb{t} \\
+    \pmb{v} & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x \\ y \\ 1
+\end{matrix}\right)</script><hr>
+<h2 id="3D空间中的变换"><a href="#3D空间中的变换" class="headerlink" title="3D空间中的变换"></a>3D空间中的变换</h2><p>在3D空间中的变换和2D平面中的变换没有本质区别，只是增加了一个维度。</p>
+<h3 id="·-相似变换-1"><a href="#·-相似变换-1" class="headerlink" title="· 相似变换"></a>· 相似变换</h3><p>3D空间中的相似变换，可以分解为分别忽略<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="1.294ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 572 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g></g></svg></mjx-container>、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.109ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 490 647"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="1.052ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 465 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D467" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"></path></g></g></g></svg></mjx-container>轴后，进行2D平面上的相似变换，其使用矩阵表示为：</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+    x' \\
+    y' \\
+    z' \\
+    1
+\end{matrix}\right)  = 
+\left(\begin{matrix}
+    sR & \pmb{t}  \\
+    \pmb{0} & 1 
+\end{matrix}\right)
+\left(\begin{matrix}
+    x \\
+    y \\
+    z \\
+    1
+\end{matrix}\right)</script><p>其中，</p>
+<script type="math/tex; mode=display">
+R =
+\left(\begin{matrix}
+     1 & 0 & 0 \\
+     0 & cos\alpha & -sin\alpha \\
+     0 & sin\alpha & cos\alpha \\
+\end{matrix}\right)
+\left(\begin{matrix}
+     cos\beta & 0 & sin\beta \\
+     0 & 1 & 0 \\
+     -sin\beta & 0 & cos\beta \\
+\end{matrix}\right)
+\left(\begin{matrix}
+     cos\gamma & -sin\gamma & 0 \\
+     sin\gamma & cos\gamma & 0 \\
+     0 & 0 & 1
+\end{matrix}\right)</script><script type="math/tex; mode=display">
+\pmb{t} =
+\left(\begin{matrix}
+    x_0 \\
+    y_0 \\
+    z_0 \\
+    1
+\end{matrix}\right)</script><p>所以，在3D空间中进行相似变换，拥有平移<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.375ex" xmlns="http://www.w3.org/2000/svg" width="2.282ex" height="1.375ex" role="img" focusable="false" viewBox="0 -442 1008.6 607.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container>、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="2.096ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 926.6 647"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(523,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container>、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.375ex" xmlns="http://www.w3.org/2000/svg" width="2.04ex" height="1.375ex" role="img" focusable="false" viewBox="0 -442 901.6 607.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D467" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"></path></g><g data-mml-node="mn" transform="translate(498,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container>，旋转<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="1.448ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 640 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FC" d="M34 156Q34 270 120 356T309 442Q379 442 421 402T478 304Q484 275 485 237V208Q534 282 560 374Q564 388 566 390T582 393Q603 393 603 385Q603 376 594 346T558 261T497 161L486 147L487 123Q489 67 495 47T514 26Q528 28 540 37T557 60Q559 67 562 68T577 70Q597 70 597 62Q597 56 591 43Q579 19 556 5T512 -10H505Q438 -10 414 62L411 69L400 61Q390 53 370 41T325 18T267 -2T203 -11Q124 -11 79 39T34 156ZM208 26Q257 26 306 47T379 90L403 112Q401 255 396 290Q382 405 304 405Q235 405 183 332Q156 292 139 224T121 120Q121 71 146 49T208 26Z"></path></g></g></g></svg></mjx-container>、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex" xmlns="http://www.w3.org/2000/svg" width="1.281ex" height="2.034ex" role="img" focusable="false" viewBox="0 -705 566 899"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FD" d="M29 -194Q23 -188 23 -186Q23 -183 102 134T186 465Q208 533 243 584T309 658Q365 705 429 705H431Q493 705 533 667T573 570Q573 465 469 396L482 383Q533 332 533 252Q533 139 448 65T257 -10Q227 -10 203 -2T165 17T143 40T131 59T126 65L62 -188Q60 -194 42 -194H29ZM353 431Q392 431 427 419L432 422Q436 426 439 429T449 439T461 453T472 471T484 495T493 524T501 560Q503 569 503 593Q503 611 502 616Q487 667 426 667Q384 667 347 643T286 582T247 514T224 455Q219 439 186 308T152 168Q151 163 151 147Q151 99 173 68Q204 26 260 26Q302 26 349 51T425 137Q441 171 449 214T457 279Q457 337 422 372Q380 358 347 358H337Q258 358 258 389Q258 396 261 403Q275 431 353 431Z"></path></g></g></g></svg></mjx-container>、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.489ex" xmlns="http://www.w3.org/2000/svg" width="1.229ex" height="1.486ex" role="img" focusable="false" viewBox="0 -441 543 657"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FE" d="M31 249Q11 249 11 258Q11 275 26 304T66 365T129 418T206 441Q233 441 239 440Q287 429 318 386T371 255Q385 195 385 170Q385 166 386 166L398 193Q418 244 443 300T486 391T508 430Q510 431 524 431H537Q543 425 543 422Q543 418 522 378T463 251T391 71Q385 55 378 6T357 -100Q341 -165 330 -190T303 -216Q286 -216 286 -188Q286 -138 340 32L346 51L347 69Q348 79 348 100Q348 257 291 317Q251 355 196 355Q148 355 108 329T51 260Q49 251 47 251Q45 249 31 249Z"></path></g></g></g></svg></mjx-container>以及缩放倍数<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex" xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.023ex" role="img" focusable="false" viewBox="0 -442 469 452"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g></g></g></svg></mjx-container>共计7个自由度。</p>
+<h3 id="·-仿射变换-1"><a href="#·-仿射变换-1" class="headerlink" title="· 仿射变换"></a>· 仿射变换</h3><script type="math/tex; mode=display">
+\left(\begin{matrix}
+    x'  \\
+    y'  \\
+    z' \\
+    1
+\end{matrix}\right)  = 
+
+\left(\begin{matrix}
+    a & b & c & x_0 \\
+    d & e & f & y_0 \\
+    g & h & i & z_0 \\
+    0 & 0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x \\
+    y \\
+    z \\
+    1
+\end{matrix}\right) =
+\left(\begin{matrix}
+    A & \pmb{t} \\
+    \pmb{0} & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x \\ y \\ z \\ 1
+\end{matrix}\right)</script><p>拥有12个自由度。</p>
+<h3 id="·-射影变换（透视变换）-1"><a href="#·-射影变换（透视变换）-1" class="headerlink" title="· 射影变换（透视变换）"></a>· 射影变换（透视变换）</h3><script type="math/tex; mode=display">
+\left(\begin{matrix}
+    x'  \\
+    y'  \\
+    z' \\
+    1
+\end{matrix}\right)  = 
+
+\left(\begin{matrix}
+    a & b & c & x_0 \\
+    d & e & f & y_0 \\
+    g & h & i & z_0 \\
+    v_1 & v_2 & v_3 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x \\
+    y \\
+    z \\
+    1
+\end{matrix}\right) =
+\left(\begin{matrix}
+    A & \pmb{t} \\
+    \pmb{v} & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+    x \\ y \\ z \\ 1
+\end{matrix}\right)</script><p>拥有15个自由度。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">HDY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://hudongyue.com/2022/03/07/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2/">http://hudongyue.com/2022/03/07/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://hudongyue.com" target="_blank">HDY blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/computer-vision/">computer vision</a><a class="post-meta__tags" href="/tags/computer-graphics/">computer graphics</a></div><div class="post_share"><div class="social-share" data-image="/%5Cassets%5Cimg%5Cgraphic_transfer%5Ccover.png%5Cassets%5Cimg%5Cgraphic_transfer%5Ccover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/03/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E6%91%84%E5%83%8F%E6%9C%BA%E6%A8%A1%E5%9E%8B/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/img/camera_model/camera.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">三维重建之摄像机模型</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/03/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E6%91%84%E5%83%8F%E6%9C%BA%E6%A8%A1%E5%9E%8B/" title="三维重建之摄像机模型"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/img/camera_model/camera.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-05</div><div class="title">三维重建之摄像机模型</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/portrait.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">HDY</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hudongyue1"><i class="fab fa-github"></i><span>My GitHub</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2D%E5%B9%B3%E9%9D%A2%E4%B8%AD%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">2D平面中的变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7-%E7%AD%89%E8%B7%9D%E5%8F%98%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">· 等距变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%9D%E5%90%91%E5%8F%98%E6%8D%A2%EF%BC%88%E6%AC%A7%E5%BC%8F%E5%8F%98%E6%8D%A2%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">保向变换（欧式变换）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7-%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2"><span class="toc-number">1.2.</span> <span class="toc-text">· 相似变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7-%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text">· 仿射变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7-%E5%B0%84%E5%BD%B1%E5%8F%98%E6%8D%A2%EF%BC%88%E9%80%8F%E8%A7%86%E5%8F%98%E6%8D%A2%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">· 射影变换（透视变换）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="toc-number">2.</span> <span class="toc-text">3D空间中的变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7-%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2-1"><span class="toc-number">2.1.</span> <span class="toc-text">· 相似变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7-%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2-1"><span class="toc-number">2.2.</span> <span class="toc-text">· 仿射变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7-%E5%B0%84%E5%BD%B1%E5%8F%98%E6%8D%A2%EF%BC%88%E9%80%8F%E8%A7%86%E5%8F%98%E6%8D%A2%EF%BC%89-1"><span class="toc-number">2.3.</span> <span class="toc-text">· 射影变换（透视变换）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/07/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E5%9B%BE%E5%BD%A2%E5%8F%98%E6%8D%A2/" title="三维重建之图形变换">三维重建之图形变换</a><time datetime="2022-03-07T14:00:01.000Z" title="发表于 2022-03-07 22:00:01">2022-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/05/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E4%B9%8B%E6%91%84%E5%83%8F%E6%9C%BA%E6%A8%A1%E5%9E%8B/" title="三维重建之摄像机模型">三维重建之摄像机模型</a><time datetime="2022-03-05T12:46:06.000Z" title="发表于 2022-03-05 20:46:06">2022-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/07/9-7%E7%AE%97%E6%B3%95%EF%BC%8C%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/" title="9-7算法，最小生成树总结">9-7算法，最小生成树总结</a><time datetime="2020-09-07T11:32:01.000Z" title="发表于 2020-09-07 19:32:01">2020-09-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/01/9-1%E7%AE%97%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92(%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6%E3%80%81%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F)/" title="9-1算法，使用动态规划(预测赢家、石子游戏)">9-1算法，使用动态规划(预测赢家、石子游戏)</a><time datetime="2020-09-01T01:05:05.000Z" title="发表于 2020-09-01 09:05:05">2020-09-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/08/30/8-30%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" title="8-30最短路径算法总结">8-30最短路径算法总结</a><time datetime="2020-08-30T01:53:38.000Z" title="发表于 2020-08-30 09:53:38">2020-08-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By HDY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [ ['$','$'], ["\\(","\\)"]],
